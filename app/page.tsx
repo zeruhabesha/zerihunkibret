@@ -193,7 +193,7 @@ export default function Home() {
       description: "Professional logo designs, brand identity packages, and visual guidelines for various clients.",
       technologies: ["Illustrator", "Photoshop", "Brand Design"],
       image: "/images/logo.png",
-      link: "https://drive.google.com/file/d/1rNS-ZQY_5eTVNwTsBSCVoxE_6RkpXswE/view",
+      link: "https://docs.google.com/document/d/19FUa290pr8jPKATg-GJgimV8zbOBLrTz1rWR9Sqspaw/edit?usp=sharing",
     },
     {
       id: 20,
@@ -201,7 +201,7 @@ export default function Home() {
       description: "Brochures, flyers, banners, and promotional materials for marketing campaigns.",
       technologies: ["Photoshop", "Illustrator", "Print Design"],
       image: "/images/broucher.png",
-      link: "https://drive.google.com/file/d/1rNS-ZQY_5eTVNwTsBSCVoxE_6RkpXswE/view",
+      link: "https://docs.google.com/document/d/1aK-TmHpch7PQI3MdXLhqU_ceQXWW-h9g2OGN8jvC5UI/edit?usp=sharing",
     },
     {
       id: 21,
