@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+
+# Build output
+/.next
+/out
+/build
+
+# Optional next.js cache
+/.next/cache
+
+# Production .env
+/.env.production
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Logs
+*.log
+*.csv
+
+# Secrets
+*.pem
+
+# Other
+/tmp
+/temp
+*.swp
+*.lock
