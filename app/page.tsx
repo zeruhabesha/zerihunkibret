@@ -113,18 +113,20 @@ export default function Home() {
       image: "/images/z-group.png",
       link: "https://z-group-one.vercel.app",
     },
-    {
-      id: 10,
-      title: "Personal Portfolio",
-      description: "My personal portfolio website showcasing projects and skills.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      image: "/images/personal.png",
-      link: "https://zeruhabesha.github.io/my_personal_portofilo/",
-    },
+   
   ]
 
   const projectDemos = [
+   
     {
+      id: 14,
+      title: "Beta ( Property Management System )",
+      description: "( property, User, Tenant , Agreement, Maintenance , Clearance , Complaint , geust, task) Managment .",
+      technologies: ["React", "Node JS","Redux", "MongoDB", "Express Js", "TypeScript"],
+      image: "/images/pms.png",
+      link: "https://drive.google.com/file/d/14Tsaqyvd78z1et3kC-cBpmTlqX2BZdXb/view?usp=sharing",
+    },
+     {
       id: 11,
       title: "Beta Tech Hub Full-Stack Project",
       description: "Comprehensive demonstration of a full-stack project developed for Beta Tech Hub.",
@@ -132,18 +134,11 @@ export default function Home() {
       image: "/images/tender.png",
       link: "https://drive.google.com/file/d/1wgsDuIlGRFE_RKYhtowNBDebrX2hw5Tb/view",
     },
-    {
-      id: 12,
-      title: "Sage Institute PLC",
-      description: "Project demonstration for Sage Institute's management system.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      image: "/images/sage.png",
-      link: "https://drive.google.com/file/d/1y69vcdI43iu4kcEilIEAeTT8ldW4ySsp/view",
-    },
+   
     {
       id: 13,
-      title: "Lidiya Clinic Management System",
-      description: "Healthcare management system for patient records and appointments.",
+      title: "Ably Electric Store System",
+      description: "store system form electrical management.",
       technologies: ["PHP", "MySQL", "Store Management System"],
       image: "/images/ablyadmin.png",
       link: "https://drive.google.com/file/d/16WeqmRNVXbd9WygcMhOC3UWvrT1WLC_T/view",
@@ -155,6 +150,14 @@ export default function Home() {
       technologies: ["React", "Node JS"],
       image: "/images/lidiya.png",
       link: "https://drive.google.com/file/d/1uNVkW6QB14hcC5tuxcqRw-YZydxWR0oU/view",
+    },
+    {
+      id: 12,
+      title: "Sage Institute PLC",
+      description: "Project demonstration for Sage Institute's management system.",
+      technologies: ["React", "Node.js", "MongoDB"],
+      image: "/images/sage.png",
+      link: "https://drive.google.com/file/d/1y69vcdI43iu4kcEilIEAeTT8ldW4ySsp/view",
     },
   ]
 
@@ -590,7 +593,7 @@ export default function Home() {
                   <div className="flex items-center">
   <FaTelegram className="mr-3 text-blue-500" /> {/* Changed to Telegram icon and color */}
   <a
-    href="https://t.me/your-telegram-username" // Replace with your Telegram channel/username
+    href="https://t.me/zeru_hab" // Replace with your Telegram channel/username
     target="_blank"
     rel="noopener noreferrer"
     className="hover:text-blue-400 transition-colors"

@@ -2,6 +2,7 @@ import type React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "../components/providers"; // If one level up
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -27,7 +28,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={inter.className}>
         <Providers> {/* Wrap everything inside Providers */}
           {children}
-        </Providers>
+        <Analytics /> {/* Added Vercel Analytics */}
+      </Providers>
       </body>
     </html>
   );
