@@ -315,7 +315,7 @@ export default function Home() {
               />
             </motion.h2>
             <motion.p className="text-lg text-gray-400 mb-8 leading-relaxed" variants={fadeIn}>
-              With 3+ years of experience in MERN stack, PHP, and MySQL, alongside over 5 years in graphic and UI
+              With 3+ years of experience as Full Stack Developer, alongside over 5 years in graphic and UI
               design, I bring a strong blend of technical and creative expertise to create robust, user-friendly
               applications.
             </motion.p>
