@@ -161,11 +161,11 @@ export default function Home() {
   const uiuxProjects = [
     {
       id: 15,
-      title: "UI/UX Design Portfolio",
+      title: "Awdamet Perfume Website",
       description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/logo.png",
-      link: "https://drive.google.com/file/d/1rNS-ZQY_5eTVNwTsBSCVoxE_6RkpXswE/view",
+      image: "/images/awdamet.png",
+      link: "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
     {
       id: 16,
@@ -183,7 +183,22 @@ export default function Home() {
       image: "/images/shebele.png",
       link: "https://www.figma.com/design/Q1nHsYjJnsTtSgLZbkmwlD/Shebele-Bank-Mobile-App?node-id=0-1&p=f&t=AeeutnoSa40n2hAN-0",
     },
-    
+    {
+      id: 22,
+      title: "Beta Tender Management system App",
+      description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
+      technologies: ["Figma", "UI/UX", "Design Systems"],
+      image: "/images/beta.png",
+      link: "https://www.figma.com/design/nB14NWjzOvu4RPp67n91PG/Untitled?node-id=0-1&p=f&t=CkkvEdmrdyp9ojrW-0",
+    },
+    {
+      id: 23,
+      title: "Health Mobile App",
+      description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
+      technologies: ["Figma", "UI/UX", "Design Systems"],
+      image: "/images/health.png",
+      link: "https://www.figma.com/design/lfqgob86I6iq3m6pcDrLa6/Health-App?node-id=0-1&p=f&t=RvqcrPJtHvLczg4n-0",
+    },
   ]
 
   const graphicsProjects = [
