@@ -219,6 +219,14 @@ export default function Home() {
       link: "https://docs.google.com/document/d/1aK-TmHpch7PQI3MdXLhqU_ceQXWW-h9g2OGN8jvC5UI/edit?usp=sharing",
     },
     {
+      id: 30,
+      title: "Company Profiles",
+      description: "Company Profile for Companies.",
+      technologies: ["Photoshop", "Illustrator", "Print Design"],
+      image: "/images/company.png",
+      link: "https://docs.google.com/document/d/1k-K6SP1zbcrhF57pzOeqS6G-eMzLAYtOrgoz7wMCSzY/edit?usp=sharing",
+    },
+    {
       id: 21,
       title: "Z-Graphics YouTube Channel",
       description: "Video tutorials, design process demonstrations, and graphic design content.",
