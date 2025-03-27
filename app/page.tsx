@@ -171,6 +171,15 @@ export default function Home() {
       link: "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
     {
+      id: 15,
+      title: "Awdamet Perfume Website",
+      description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
+      technologies: ["Figma", "UI/UX", "Design Systems"],
+      image: "/images/awdamet.png",
+      link: "https://www.figma.com/proto/Gk7ndUdZAmZXZGnL8ypPhy/Untitled?node-id=0-1&t=NRWh4AXHZC2vu3Kh-1",
+    },
+    
+    {
       id: 16,
       title: "Meregatech UI Design",
       description: "Comprehensive UI design for Meregatech platform with modern interface elements.",
