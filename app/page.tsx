@@ -172,10 +172,10 @@ export default function Home() {
     },
     {
       id: 15,
-      title: "Awdamet Perfume Website",
-      description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
+      title: "AutoSpare Hub",
+      description: "AutoSpare Hub is an online store specializing in high-quality automotive spare parts.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/awdamet.png",
+      image: "/images/AutoSpare.png",
       link: "https://www.figma.com/proto/Gk7ndUdZAmZXZGnL8ypPhy/Untitled?node-id=0-1&t=NRWh4AXHZC2vu3Kh-1",
     },
     
