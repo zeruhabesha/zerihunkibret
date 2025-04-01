@@ -163,7 +163,7 @@ export default function Home() {
 
   const uiuxProjects = [
     {
-      id: 15,
+      id: 45,
       title: "Awdamet Perfume Website",
       description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
@@ -171,12 +171,12 @@ export default function Home() {
       link: "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
     {
-      id: 15,
+      id: 35,
       title: "AutoSpare Hub",
       description: "AutoSpare Hub is an online store specializing in high-quality automotive spare parts.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/AutoSpare.png",
-      link: "https://www.figma.com/proto/Gk7ndUdZAmZXZGnL8ypPhy/Untitled?node-id=0-1&t=NRWh4AXHZC2vu3Kh-1",
+      image: "/images/Partner.png",
+      link: "https://www.figma.com/design/79avRmPl1iD9H32HlifFPZ/Untitled?node-id=0-1&t=cHKsD7LnMHbrpFbS-1",
     },
     
     {
