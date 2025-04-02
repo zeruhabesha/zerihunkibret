@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa"
 
 export default function Resume() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const resumeUrl = "https://drive.google.com/file/d/1RLYrW_mMa7zX-U95wwxUPFpYH2MtYkFs/preview"
+  const resumeUrl = "https://drive.google.com/file/d/10ObBd7ZIgJMYkBf8sbUB7Fu0T8-mbtX3/view?usp=sharing"
 
   useEffect(() => {
     setIsLoaded(true)
