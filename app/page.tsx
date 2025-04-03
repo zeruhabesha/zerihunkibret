@@ -4,8 +4,17 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import ProjectCard from "../components/ProjectCard"
-import { FaGithub, FaLinkedin,FaTelegram,FaWhatsapp, FaEnvelope, FaPhone, FaGraduationCap, FaCertificate, FaYoutube } from "react-icons/fa"
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhone,
+  FaGraduationCap,
+  FaCertificate,
+  FaYoutube,
+} from "react-icons/fa"
 import {
   SiMui,
   SiReact,
@@ -25,6 +34,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
+import Tabs from "./tabs"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -39,7 +49,7 @@ export default function Home() {
       id: 4,
       title: "Beta PLC",
       description: "Tender Management System",
-      technologies: ["React", "Node.js","Express.Js","socketIO","MongoDB", "Responsive Design"],
+      technologies: ["React", "Node.js", "Express.Js", "socketIO", "MongoDB", "Responsive Design"],
       image: "/images/betaplc.png",
       link: "https://betaplc.com",
     },
@@ -47,7 +57,7 @@ export default function Home() {
       id: 8,
       title: "Ethio Tech Addis",
       description: "Technology services platform for the Ethiopian market.",
-      technologies: ["MERN", "Postgress-SQL", "Redux","Responsive Design"],
+      technologies: ["MERN", "Postgress-SQL", "Redux", "Responsive Design"],
       image: "/images/ethiotech.png",
       link: "https://ethio-tech-addis.vercel.app",
     },
@@ -75,7 +85,7 @@ export default function Home() {
       image: "/images/ethioturism.png",
       link: "https://ethioturism.vercel.app",
     },
-   
+
     {
       id: 5,
       title: "Ably Electric",
@@ -84,8 +94,6 @@ export default function Home() {
       image: "/images/ably.png",
       link: "https://ablyelectric.com",
     },
-    
-    
   ]
 
   const moreProjects = [
@@ -113,20 +121,19 @@ export default function Home() {
       image: "/images/z-group.png",
       link: "https://z-group-one.vercel.app",
     },
-   
   ]
 
   const projectDemos = [
-   
     {
       id: 14,
       title: "Beta ( Property Management System )",
-      description: "( property, User, Tenant , Agreement, Maintenance , Clearance , Complaint , geust, task) Managment .",
-      technologies: ["React", "Node JS","Redux", "MongoDB", "Express Js", "TypeScript"],
+      description:
+        "( property, User, Tenant , Agreement, Maintenance , Clearance , Complaint , geust, task) Managment .",
+      technologies: ["React", "Node JS", "Redux", "MongoDB", "Express Js", "TypeScript"],
       image: "/images/pms.png",
       link: "https://drive.google.com/file/d/14Tsaqyvd78z1et3kC-cBpmTlqX2BZdXb/view?usp=sharing",
     },
-     {
+    {
       id: 11,
       title: "Beta Tech Hub Full-Stack Project",
       description: "Comprehensive demonstration of a full-stack project developed for Beta Tech Hub.",
@@ -134,7 +141,7 @@ export default function Home() {
       image: "/images/tender.png",
       link: "https://drive.google.com/file/d/1wgsDuIlGRFE_RKYhtowNBDebrX2hw5Tb/view",
     },
-   
+
     {
       id: 13,
       title: "Ably Electric Store System",
@@ -203,7 +210,7 @@ export default function Home() {
       link: "https://www.figma.com/design/Q1nHsYjJnsTtSgLZbkmwlD/Shebele-Bank-Mobile-App?node-id=0-1&p=f&t=AeeutnoSa40n2hAN-0",
     },
     {
-      id: 17,
+      id: 36,
       title: "ArxiSol Partner Portal Design",
       description: "UI/UX design for a mobile banking application with focus on user experience and accessibility.",
       technologies: ["Figma", "Mobile Design", "Banking"],
@@ -306,7 +313,7 @@ export default function Home() {
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <section id="home" className="flex flex-col md:flex-row items-center justify-between py-16 min-h-[80vh]">
-        <motion.div
+          <motion.div
             className="md:w-1/2 mb-8 md:mb-0"
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
@@ -339,9 +346,8 @@ export default function Home() {
               />
             </motion.h2>
             <motion.p className="text-lg text-gray-400 mb-8 leading-relaxed" variants={fadeIn}>
-              With 3+ years of experience as Full Stack Developer, alongside over 5 years in graphic and UI
-              design, I bring a strong blend of technical and creative expertise to create robust, user-friendly
-              applications.
+              With 3+ years of experience as Full Stack Developer, alongside over 5 years in graphic and UI design, I
+              bring a strong blend of technical and creative expertise to create robust, user-friendly applications.
             </motion.p>
             <motion.div className="flex space-x-4" variants={fadeIn}>
               <a
@@ -380,8 +386,8 @@ export default function Home() {
               >
                 <FaYoutube size={24} />
               </a>
-                <a
-                href="https://t.me/zeru_hab"  // Replace with your Telegram link
+              <a
+                href="https://t.me/zeru_hab" // Replace with your Telegram link
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300"
@@ -389,13 +395,13 @@ export default function Home() {
                 <FaTelegram size={24} />
               </a>
               <a
-        href="https://wa.me/+251953964964" // Replace with your WhatsApp number
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-3 bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300"
-      >
-        <FaWhatsapp size={24} />
-      </a>
+                href="https://wa.me/+251953964964" // Replace with your WhatsApp number
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300"
+              >
+                <FaWhatsapp size={24} />
+              </a>
             </motion.div>
           </motion.div>
 
@@ -406,11 +412,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/30">
-              <img
-                src="/images/software-1.jpg"
-                alt="Zerihun Kibret"
-                className="w-full h-full object-cover"
-              />
+              <img src="/images/software-1.jpg" alt="Zerihun Kibret" className="w-full h-full object-cover" />
             </div>
           </motion.div>
         </section>
@@ -534,57 +536,22 @@ export default function Home() {
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Portfolio</h2>
-
-          {/* Software Development Projects */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-center text-blue-400">Software Development</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {softwareProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+              Portfolio
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Explore my projects across different domains - from full-stack applications to UI/UX designs and graphic
+              artwork.
+            </p>
           </div>
 
-          {/* More Web Projects */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-center text-green-400">More Web Projects</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {moreProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
-
-          {/* Project Demos */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-center text-yellow-400">Project Demos & Documentation</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {projectDemos.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
-
-          {/* UI/UX Design Projects */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-semibold mb-6 text-center text-purple-400">UI/UX Design</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {uiuxProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
-
-          {/* Graphic Design Projects */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-center text-red-400">Graphic Design</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {graphicsProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
+          {/* Combine all software-related projects for the Full Stack tab */}
+          <Tabs
+            fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
+            uiuxProjects={uiuxProjects}
+            graphicsProjects={graphicsProjects}
+          />
         </motion.section>
 
         {/* Contact Section */}
@@ -615,16 +582,16 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="flex items-center">
-  <FaTelegram className="mr-3 text-blue-500" /> {/* Changed to Telegram icon and color */}
-  <a
-    href="https://t.me/zeru_hab" // Replace with your Telegram channel/username
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-blue-400 transition-colors"
-  >
-   Telegram Account {/* Changed to Telegram channel name */}
-  </a>
-</div>
+                    <FaTelegram className="mr-3 text-blue-500" /> {/* Changed to Telegram icon and color */}
+                    <a
+                      href="https://t.me/zeru_hab" // Replace with your Telegram channel/username
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-blue-400 transition-colors"
+                    >
+                      Telegram Account {/* Changed to Telegram channel name */}
+                    </a>
+                  </div>
                 </div>
               </div>
               <div>
