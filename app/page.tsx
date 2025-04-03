@@ -203,6 +203,14 @@ export default function Home() {
       link: "https://www.figma.com/design/Q1nHsYjJnsTtSgLZbkmwlD/Shebele-Bank-Mobile-App?node-id=0-1&p=f&t=AeeutnoSa40n2hAN-0",
     },
     {
+      id: 17,
+      title: "ArxiSol Partner Portal Design",
+      description: "UI/UX design for a mobile banking application with focus on user experience and accessibility.",
+      technologies: ["Figma", "Mobile Design", "Banking"],
+      image: "/images/arxisol.png",
+      link: "https://www.figma.com/proto/narmh4cgzfbCfBbIIf1ZBp/Untitled?node-id=38-1060&p=f&t=aKZcMePxtshKD1O8-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=34%3A819",
+    },
+    {
       id: 22,
       title: "Beta Tender Management system App",
       description: "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
