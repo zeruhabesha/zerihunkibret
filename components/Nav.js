@@ -82,7 +82,7 @@ const Nav = () => {
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/">
           <motion.div
-            className="text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
+            className="text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
             whileHover={{ scale: 1.05 }}
           >
             ZK
@@ -107,7 +107,7 @@ const Nav = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+              className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
             >
               Resume
             </motion.button>
@@ -144,7 +144,7 @@ const Nav = () => {
             </Link>
           ))}
           <Link href="/resume">
-            <button className="px-5 py-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 mt-4">
+            <button className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 mt-4">
               Resume
             </button>
           </Link>

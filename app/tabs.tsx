@@ -54,7 +54,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
           <div className="bg-gray-800 p-2 rounded-xl flex relative shadow-xl shadow-blue-500/10">
             {/* Active Tab Indicator */}
             <motion.div 
-              className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl z-0"
+              className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl z-0"
               variants={indicatorVariants}
               animate={activeTab}
               initial={false}
@@ -121,7 +121,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
           </motion.div>
           
           <motion.div 
-            className={`flex flex-col items-center ${activeTab === "uiux" ? "text-purple-400" : "text-gray-500"}`}
+            className={`flex flex-col items-center ${activeTab === "uiux" ? "text-blue-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "uiux" ? -5 : 0 }}
           >
             <div className="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-2">

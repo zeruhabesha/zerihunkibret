@@ -277,7 +277,7 @@ export default function Home() {
     { name: "Next.js", icon: <SiNextdotjs className="text-black" size={40} /> },
     { name: "MongoDB", icon: <SiMongodb className="text-green-500" size={40} /> },
     { name: "Express", icon: <SiExpress className="text-gray-700" size={40} /> },
-    { name: "PHP", icon: <SiPhp className="text-purple-600" size={40} /> },
+    { name: "PHP", icon: <SiPhp className="text-blue-600" size={40} /> },
     { name: "MySQL", icon: <SiMysql className="text-blue-800" size={40} /> },
     { name: "Laravel", icon: <SiLaravel className="text-red-600" size={40} /> },
     { name: "Flutter", icon: <SiFlutter className="text-blue-400" size={40} /> },
@@ -285,7 +285,7 @@ export default function Home() {
     { name: "CoreUI", icon: <span className="text-blue-500 font-bold text-xl">CoreUI</span> },
     { name: "Tailwind", icon: <SiTailwindcss className="text-blue-400" size={40} /> },
     { name: "WordPress", icon: <SiWordpress className="text-blue-700" size={40} /> },
-    { name: "Figma", icon: <SiFigma className="text-purple-500" size={40} /> },
+    { name: "Figma", icon: <SiFigma className="text-blue-500" size={40} /> },
     { name: "Photoshop", icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
     { name: "Illustrator", icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
     { name: "Canva", icon: <SiCanva className="text-blue-500" size={40} /> },
@@ -332,7 +332,7 @@ export default function Home() {
             variants={fadeIn}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
+              className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
               variants={fadeIn}
             >
               <Typewriter
@@ -446,10 +446,10 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+              <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
                 About Me
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
             </motion.div>
 
             <AnimatedAbout content={aboutContent} />
@@ -530,7 +530,7 @@ export default function Home() {
           variants={fadeIn}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
               Portfolio
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
@@ -613,7 +613,7 @@ export default function Home() {
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
                   >
                     Send Message
                   </button>

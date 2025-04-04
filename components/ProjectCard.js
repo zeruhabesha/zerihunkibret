@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
             Visit Project
           </a>
         )}
-        <button className="text-purple-400 hover:text-purple-300 transition-colors">Details</button>
+        <button className="text-blue-400 hover:text-blue-300 transition-colors">Details</button>
       </div>
     </motion.div>
   )

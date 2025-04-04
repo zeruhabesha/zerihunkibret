@@ -29,7 +29,7 @@ export default function AnimatedAbout({ content }: AnimatedAboutProps) {
     <div className="relative">
       {/* Background decorative elements */}
       <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+      <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
 
       {/* Main content container */}
       <motion.div
@@ -40,7 +40,7 @@ export default function AnimatedAbout({ content }: AnimatedAboutProps) {
         transition={{ duration: 0.5 }}
       >
         {/* Decorative accent line */}
-        <div className="absolute left-0 top-10 bottom-10 w-1 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full"></div>
+        <div className="absolute left-0 top-10 bottom-10 w-1 bg-gradient-to-b from-blue-500 to-blue-600 rounded-full"></div>
 
         <motion.div
           className="pl-6"
@@ -68,7 +68,7 @@ export default function AnimatedAbout({ content }: AnimatedAboutProps) {
       {/* Floating decorative elements */}
       <div className="hidden md:block">
         <div className="absolute top-10 -right-5 w-10 h-10 bg-blue-500 rounded-full opacity-20"></div>
-        <div className="absolute bottom-20 -left-5 w-6 h-6 bg-purple-500 rounded-full opacity-20"></div>
+        <div className="absolute bottom-20 -left-5 w-6 h-6 bg-blue-500 rounded-full opacity-20"></div>
         <div className="absolute top-1/2 -right-3 w-4 h-4 bg-teal-500 rounded-full opacity-20"></div>
       </div>
     </div>
