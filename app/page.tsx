@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
+import AnimatedAbout from "./animated-about"
 import {
   FaGithub,
   FaLinkedin,
@@ -306,6 +307,17 @@ export default function Home() {
     },
   }
 
+  // About me content
+  const aboutContent = {
+    paragraphs: [
+      "I am a versatile Full-Stack Developer with over 3 years of specialized experience in the MERN stack (MongoDB, Express.js, React, Node.js), complemented by proficiency in PHP and MySQL. My journey in web development began with a passion for creating intuitive, functional applications that solve real-world problems.",
+      "At Beta Tech Hub, I led the development of several significant projects that showcased my technical versatility. I architected and implemented a comprehensive Property Management System that streamlined tenant management, maintenance requests, and financial tracking. The Tender Management System I developed revolutionized the procurement process by automating bid submissions, evaluations, and award notifications, significantly reducing processing time and improving transparency.",
+      "One of my most impactful projects was a full-stack medical practice application that integrated appointment scheduling, patient records management, and billing systems. This solution improved operational efficiency by 40% and enhanced the patient experience through an intuitive interface and automated reminders.",
+      "My technical expertise extends beyond development frameworks to include UI component libraries like MaterialUI and CoreUI. I leverage these tools to create consistent, responsive interfaces that adhere to modern design principles while maintaining excellent performance. I'm particularly skilled at implementing complex data visualization components and interactive elements that enhance user engagement.",
+      "What sets me apart is my dual expertise in both development and design. With over 5 years of experience in graphic design and UI/UX, using tools like Figma, Adobe Photoshop, and Illustrator, I bring a unique perspective to projects. This combination allows me to bridge the gap between technical functionality and aesthetic appeal, resulting in applications that are not only powerful and efficient but also visually compelling and intuitive to use.",
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <Nav />
@@ -420,46 +432,27 @@ export default function Home() {
         {/* About Section */}
         <motion.section
           id="about"
-          className="py-16"
+          className="py-16 relative overflow-hidden"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">About Me</h2>
-          <div className="bg-gray-800 rounded-xl p-8 shadow-xl">
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I am a versatile Full-Stack Developer with over 3 years of specialized experience in the MERN stack
-              (MongoDB, Express.js, React, Node.js), complemented by proficiency in PHP and MySQL. My journey in web
-              development began with a passion for creating intuitive, functional applications that solve real-world
-              problems.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              At Beta Tech Hub, I led the development of several significant projects that showcased my technical
-              versatility. I architected and implemented a comprehensive Property Management System that streamlined
-              tenant management, maintenance requests, and financial tracking. The Tender Management System I developed
-              revolutionized the procurement process by automating bid submissions, evaluations, and award
-              notifications, significantly reducing processing time and improving transparency.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              One of my most impactful projects was a full-stack medical practice application that integrated
-              appointment scheduling, patient records management, and billing systems. This solution improved
-              operational efficiency by 40% and enhanced the patient experience through an intuitive interface and
-              automated reminders.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              My technical expertise extends beyond development frameworks to include UI component libraries like
-              MaterialUI and CoreUI. I leverage these tools to create consistent, responsive interfaces that adhere to
-              modern design principles while maintaining excellent performance. I'm particularly skilled at implementing
-              complex data visualization components and interactive elements that enhance user engagement.
-            </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              What sets me apart is my dual expertise in both development and design. With over 5 years of experience in
-              graphic design and UI/UX, using tools like Figma, Adobe Photoshop, and Illustrator, I bring a unique
-              perspective to projects. This combination allows me to bridge the gap between technical functionality and
-              aesthetic appeal, resulting in applications that are not only powerful and efficient but also visually
-              compelling and intuitive to use.
-            </p>
+          <div className="max-w-5xl mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-4xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                About Me
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            </motion.div>
+
+            <AnimatedAbout content={aboutContent} />
           </div>
         </motion.section>
 
@@ -582,14 +575,14 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="flex items-center">
-                    <FaTelegram className="mr-3 text-blue-500" /> {/* Changed to Telegram icon and color */}
+                    <FaTelegram className="mr-3 text-blue-500" />
                     <a
-                      href="https://t.me/zeru_hab" // Replace with your Telegram channel/username
+                      href="https://t.me/zeru_hab"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-blue-400 transition-colors"
                     >
-                      Telegram Account {/* Changed to Telegram channel name */}
+                      Telegram Account
                     </a>
                   </div>
                 </div>
