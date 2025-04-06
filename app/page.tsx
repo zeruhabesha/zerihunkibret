@@ -47,6 +47,14 @@ export default function Home() {
   // Updated project arrays with real projects
   const softwareProjects = [
     {
+      id: 42,
+      title: "teamIfy",
+      description: "Streamline team collaboration ",
+      technologies: ["React", "Node.js", "Express.Js", "NextJS", "MongoDB", "Responsive Design"],
+      image: "/images/teamify.png",
+      link: "https://teamify-gamma.vercel.app",
+    },
+    {
       id: 4,
       title: "Beta PLC",
       description: "Tender Management System",
