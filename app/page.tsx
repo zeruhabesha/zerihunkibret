@@ -140,7 +140,7 @@ export default function Home() {
         "( property, User, Tenant , Agreement, Maintenance , Clearance , Complaint , geust, task) Managment .",
       technologies: ["React", "Node JS", "Redux", "MongoDB", "Express Js", "TypeScript"],
       image: "/images/pms.png",
-      link: "https://drive.google.com/file/d/14Tsaqyvd78z1et3kC-cBpmTlqX2BZdXb/view?usp=sharing",
+      link: "https://drive.google.com/file/d/14Tsaqyvd78z1et3kC-cBpmTlqX2BZdXb/view",
     },
     {
       id: 11,
