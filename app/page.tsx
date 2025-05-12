@@ -87,6 +87,14 @@ export default function Home() {
       link: "https://beta-pms.netlify.app",
     },
     {
+      "id": 112,
+      "title": "BunnaFlow (Café Management System)",
+      "description": "( customers, inventory, menu, orders, reports, settings ) management system with dashboard components such as sales overview, top-selling items, and recent orders. Provides real-time control and insights for café operations.",
+      "technologies": ["React", "NextJS", "TypeScript", "TailwindCSS"],
+      "image": "/images/cafe.png",
+      "link": "https://cafe-management-rr6u.vercel.app/"
+    },
+    {
       id: 3,
       title: "Ethiopian Tourism Platform",
       description: "A platform showcasing Ethiopian tourism destinations and services.",
@@ -128,7 +136,7 @@ export default function Home() {
       description: "Marketing and promotional platform for Z-Group company.",
       technologies: ["React", "Vercel", "UI/UX Design", "Node JS", "TailWind CSS"],
       image: "/images/z-group.png",
-      link: "https://z-group-one.vercel.app",
+      link: "https://zgroup-promotion.vercel.app/",
     },
   ]
 
@@ -142,6 +150,7 @@ export default function Home() {
       image: "/images/pms.png",
       link: "https://drive.google.com/file/d/14Tsaqyvd78z1et3kC-cBpmTlqX2BZdXb/view",
     },
+   
     {
       id: 11,
       title: "Beta Tech Hub Full-Stack Project",
