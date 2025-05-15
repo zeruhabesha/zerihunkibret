@@ -46,6 +46,14 @@ export default function Home() {
 
   // Updated project arrays with real projects
   const softwareProjects = [
+       {
+      id: 42,
+      title: "NAHORagri PLC",
+      description: "NAHORagri PLC is a leading agricultural technology company in Ethiopia, specializing in innovative solutions for farmers and agribusinesses.",
+      technologies: ["React", "Node.js", "Typescript", "NextJS", "MongoDB", "Responsive Design"],
+      image: "/images/nahor.png",
+      link: "https://nahoragri.vercel.app/",
+    },
     {
       id: 42,
       title: "teamIfy",
