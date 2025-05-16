@@ -33,6 +33,7 @@ import {
   SiFlutter,
   SiWordpress,
   SiTailwindcss,
+  SiTypeScript,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
 import Tabs from "./tabs"
@@ -320,6 +321,7 @@ export default function Home() {
     { name: "Tailwind", icon: <SiTailwindcss className="text-blue-400" size={40} /> },
     { name: "WordPress", icon: <SiWordpress className="text-blue-700" size={40} /> },
     { name: "Figma", icon: <SiFigma className="text-blue-500" size={40} /> },
+    { name: "TypeScript", icon: <SiTypeScript className="text-blue-500" size={40} /> },
     { name: "Photoshop", icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
     { name: "Illustrator", icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
     { name: "Canva", icon: <SiCanva className="text-blue-500" size={40} /> },
