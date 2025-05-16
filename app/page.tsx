@@ -62,6 +62,14 @@ export default function Home() {
       image: "/images/teamify.png",
       link: "https://teamify-gamma.vercel.app",
     },
+     {
+      id: 8,
+      title: "Ethio Tech Addis",
+      description: "Technology services platform for the Ethiopian market.",
+      technologies: ["MERN", "Postgress-SQL", "Redux", "Responsive Design"],
+      image: "/images/ethiotech.png",
+      link: "https://ethio-tech-addis.vercel.app",
+    },
     {
       id: 4,
       title: "Beta PLC",
@@ -70,14 +78,7 @@ export default function Home() {
       image: "/images/betaplc.png",
       link: "https://betaplc.com",
     },
-    {
-      id: 8,
-      title: "Ethio Tech Addis",
-      description: "Technology services platform for the Ethiopian market.",
-      technologies: ["MERN", "Postgress-SQL", "Redux", "Responsive Design"],
-      image: "/images/ethiotech.png",
-      link: "https://ethio-tech-addis.vercel.app",
-    },
+   
     {
       id: 1,
       title: "Beta Tech Hub",
@@ -93,6 +94,14 @@ export default function Home() {
       technologies: ["MERN Stack", "Material UI", "Redux", "Typescript"],
       image: "/images/betapms.png",
       link: "https://beta-pms.netlify.app",
+    },
+     {
+      id: 4,
+      title: "Ikim Technology company",
+      description: "Ikim Technology company website",
+      technologies: ["React", "NextJs", "Responsive Design"],
+      image: "/images/ikim.png",
+      link: "https://ikimtech-three.vercel.app/",
     },
     {
       "id": 112,
