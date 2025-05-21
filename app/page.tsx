@@ -105,12 +105,12 @@ export default function Home() {
       link: "https://ikimtech-three.vercel.app/",
     },
     {
-      "id": 112,
-      "title": "BunnaFlow (Café Management System)",
-      "description": "( customers, inventory, menu, orders, reports, settings ) management system with dashboard components such as sales overview, top-selling items, and recent orders. Provides real-time control and insights for café operations.",
-      "technologies": ["React", "NextJS", "TypeScript", "TailwindCSS"],
-      "image": "/images/cafe.png",
-      "link": "https://cafe-management-rr6u.vercel.app/"
+      id: 112,
+      title: "BunnaFlow (Café Management System)",
+      description: "Cafe management system with dashboards for sales, orders, inventory, and more — offering real-time insights and control.",
+      technologies: ["React", "NextJS", "TypeScript", "TailwindCSS"],
+      image: "/images/cafe.png",
+      link: "https://cafe-management-rr6u.vercel.app/"
     },
     {
       id: 36,
