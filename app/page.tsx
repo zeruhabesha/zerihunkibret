@@ -116,7 +116,7 @@ export default function Home() {
       id: 36,
       title: "Simple Music Web App",
       description: "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
-      technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      technologies: ["Typescript","React", "Tailwind CSS", "Node Js" , "Express Js", "MongoDB", "Docker"],
       image: "/images/music.png", // Consider updating the image if it's unrelated
       link: "https://addis-music-lemon.vercel.app/",
     },
