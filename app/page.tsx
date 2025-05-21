@@ -33,7 +33,7 @@ import {
   SiFlutter,
   SiWordpress,
   SiTailwindcss,
-  SiTypeScript,
+  SiTypescript,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
 import Tabs from "./tabs"
@@ -113,6 +113,22 @@ export default function Home() {
       "link": "https://cafe-management-rr6u.vercel.app/"
     },
     {
+      id: 36,
+      title: "Simple Music Web App",
+      description: "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Vercel"],
+      image: "/images/music.png", // Consider updating the image if it's unrelated
+      link: "https://addis-music-lemon.vercel.app/",
+    },
+    {
+      id: 9,
+      title: "Z-Group Promotion",
+      description: "Marketing and promotional platform for Z-Group company.",
+      technologies: ["React", "Vercel", "UI/UX Design", "Node JS", "TailWind CSS"],
+      image: "/images/z-group.png",
+      link: "https://zgroup-promotion.vercel.app/",
+    },
+    {
       id: 3,
       title: "Ethiopian Tourism Platform",
       description: "A platform showcasing Ethiopian tourism destinations and services.",
@@ -148,14 +164,7 @@ export default function Home() {
       image: "/images/maziv.png",
       link: "https://maziveng.com",
     },
-    {
-      id: 9,
-      title: "Z-Group Promotion",
-      description: "Marketing and promotional platform for Z-Group company.",
-      technologies: ["React", "Vercel", "UI/UX Design", "Node JS", "TailWind CSS"],
-      image: "/images/z-group.png",
-      link: "https://zgroup-promotion.vercel.app/",
-    },
+    
   ]
 
   const projectDemos = [
@@ -321,7 +330,9 @@ export default function Home() {
     { name: "Tailwind", icon: <SiTailwindcss className="text-blue-400" size={40} /> },
     { name: "WordPress", icon: <SiWordpress className="text-blue-700" size={40} /> },
     { name: "Figma", icon: <SiFigma className="text-blue-500" size={40} /> },
-    { name: "TypeScript", icon: <SiTypeScript className="text-blue-500" size={40} /> },
+    // ...existing code...
+    { name: "TypeScript", icon: <SiTypescript className="text-blue-600" size={40} /> },
+    // ...existing code...    
     { name: "Photoshop", icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
     { name: "Illustrator", icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
     { name: "Canva", icon: <SiCanva className="text-blue-500" size={40} /> },
