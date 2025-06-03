@@ -143,7 +143,7 @@ export default function Home() {
       description: "Website for Ably Electric showcasing electrical services and products.",
       technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
       image: "/images/ably.png",
-      link: "https://ablyelectric.com",
+      link: "https://ablyelectric.vercel.app",
     },
   ]
 
