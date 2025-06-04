@@ -55,14 +55,15 @@ export default function Home() {
       image: "/images/nahor.png",
       link: "https://nahoragri.vercel.app/",
     },
-    {
-      id: 42,
-      title: "teamIfy",
-      description: "Streamline team collaboration ",
-      technologies: ["React", "Node.js", "Express.Js", "NextJS", "MongoDB", "Responsive Design"],
-      image: "/images/teamify.png",
-      link: "https://teamify-gamma.vercel.app",
+       {
+      id: 5,
+      title: "Ably Electric",
+      description: "Website for Ably Electric showcasing electrical services and products.",
+      technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
+      image: "/images/ably.png",
+      link: "https://ablyelectric.vercel.app",
     },
+    
      {
       id: 8,
       title: "Ethio Tech Addis",
@@ -72,13 +73,14 @@ export default function Home() {
       link: "https://ethio-tech-addis.vercel.app",
     },
     {
-      id: 4,
-      title: "Beta PLC",
-      description: "Tender Management System",
-      technologies: ["React", "Node.js", "Express.Js", "socketIO", "MongoDB", "Responsive Design"],
-      image: "/images/betaplc.png",
-      link: "https://betaplc.com",
+      id: 42,
+      title: "teamIfy",
+      description: "Streamline team collaboration ",
+      technologies: ["React", "Node.js", "Express.Js", "NextJS", "MongoDB", "Responsive Design"],
+      image: "/images/teamify.png",
+      link: "https://teamify-gamma.vercel.app",
     },
+    
    
     {
       id: 1,
@@ -129,6 +131,14 @@ export default function Home() {
       link: "https://zgroup-promotion.vercel.app/",
     },
     {
+      id: 4,
+      title: "Beta PLC",
+      description: "Tender Management System",
+      technologies: ["React", "Node.js", "Express.Js", "socketIO", "MongoDB", "Responsive Design"],
+      image: "/images/betaplc.png",
+      link: "https://betaplc.com",
+    },
+    {
       id: 3,
       title: "Ethiopian Tourism Platform",
       description: "A platform showcasing Ethiopian tourism destinations and services.",
@@ -137,14 +147,7 @@ export default function Home() {
       link: "https://ethioturism.vercel.app",
     },
 
-    {
-      id: 5,
-      title: "Ably Electric",
-      description: "Website for Ably Electric showcasing electrical services and products.",
-      technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
-      image: "/images/ably.png",
-      link: "https://ablyelectric.vercel.app",
-    },
+ 
   ]
 
   const moreProjects = [
