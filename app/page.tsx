@@ -92,7 +92,7 @@ export default function Home() {
     },
     {
       id: 2,
-      title: "Beta Property Management System",
+      title: "Property Management System",
       description: "A comprehensive system for managing properties, tenants, and maintenance requests.",
       technologies: ["MERN Stack", "Material UI", "Redux", "Typescript"],
       image: "/images/betapms.png",
