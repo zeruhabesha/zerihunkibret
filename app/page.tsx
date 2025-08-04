@@ -53,7 +53,7 @@ export default function Home() {
       description: "NAHORagri PLC is a leading agricultural technology company in Ethiopia, specializing in innovative solutions for farmers and agribusinesses.",
       technologies: ["React", "Node.js", "Typescript", "NextJS", "MongoDB", "Responsive Design"],
       image: "/images/nahor.png",
-      link: "https://nahoragri.vercel.app/",
+      link: "https://nahoragri.com/",
     },
        {
       id: 5,
