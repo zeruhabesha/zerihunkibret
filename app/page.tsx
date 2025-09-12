@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect, lazy, Suspense } from "react"
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
+import dynamic from "next/dynamic"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import {
@@ -37,21 +38,23 @@ import {
 import Typewriter from "./typewriter-effect"
 
 // Lazy load heavy components
-const AnimatedAbout = lazy(() => import("./animated-about"))
-const Tabs = lazy(() => import("./tabs"))
-
-// Loading component
-const LoadingSpinner = () => (
-  <div className="flex justify-center items-center py-8">
-    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
-  </div>
-)
+const AnimatedAbout = dynamic(() => import("./animated-about"), {
+  loading: () => <div className="animate-pulse bg-gray-800 rounded-2xl h-64"></div>
+})
+const Tabs = dynamic(() => import("./tabs"), {
+  loading: () => <div className="animate-pulse bg-gray-800 rounded-xl h-96"></div>
+})
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
+    // Preload critical image
+    const img = new Image()
+    img.onload = () => setImageLoaded(true)
+    img.src = "/images/software-1.jpg"
   }, [])
 
   // Updated project arrays with real projects
@@ -383,7 +386,7 @@ export default function Home() {
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
-        <section id="home" className="flex flex-col lg:flex-row items-center justify-between py-8 md:py-16 min-h-[90vh] md:min-h-[80vh] px-4 md:px-0">
+        <section id="home" className="flex flex-col lg:flex-row items-center justify-between py-8 sm:py-12 lg:py-16 min-h-[90vh] lg:min-h-[80vh] px-4 sm:px-6">
           <motion.div
             className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left"
             initial="hidden"
@@ -404,7 +407,7 @@ export default function Home() {
                 }}
               />
             </motion.h1>
-            <motion.h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-gray-300 h-12 sm:h-14 md:h-16" variants={fadeIn}>
+            <motion.h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6 text-gray-300 h-12 sm:h-16" variants={fadeIn}>
               <Typewriter
                 options={{
                   strings: ["Full-Stack Developer", "Graphics Designer", "UI/UX Designer"],
@@ -416,7 +419,7 @@ export default function Home() {
                 }}
               />
             </motion.h2>
-            <motion.p className="text-base sm:text-lg text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0" variants={fadeIn}>
+            <motion.p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0" variants={fadeIn}>
               With 3+ years of experience as Full Stack Developer, alongside over 5 years in graphic and UI design, I
               bring a strong blend of technical and creative expertise to create robust, user-friendly applications.
             </motion.p>
@@ -479,17 +482,22 @@ export default function Home() {
           <motion.div
             className="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            animate={isLoaded && imageLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/30">
-              <img 
-                src="/images/software-1.jpg" 
-                alt="Zerihun Kibret" 
-                className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
+            <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/30">
+              {imageLoaded ? (
+                <img 
+                  src="/images/software-1.jpg" 
+                  alt="Zerihun Kibret" 
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-700 animate-pulse flex items-center justify-center">
+                  <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                </div>
+              )}
             </div>
           </motion.div>
         </section>
@@ -517,9 +525,7 @@ export default function Home() {
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
             </motion.div>
 
-            <Suspense fallback={<LoadingSpinner />}>
-              <AnimatedAbout content={aboutContent} />
-            </Suspense>
+            <AnimatedAbout content={aboutContent} />
           </div>
         </motion.section>
 
@@ -560,15 +566,15 @@ export default function Home() {
         {/* Skills Section */}
         <motion.section
           id="skills"
-          className="py-8 md:py-16"
+          className="py-12 sm:py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Skills & Technologies</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Skills & Technologies</h2>
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -577,13 +583,16 @@ export default function Home() {
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center bg-gray-800 rounded-lg p-3 sm:p-4 md:p-6 hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2"
+                className="flex flex-col items-center bg-gray-800 rounded-lg p-3 sm:p-4 lg:p-6 hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2"
                 variants={fadeIn}
               >
-                <div className="mb-2 md:mb-3">
-                  {skill.icon}
+                <div className="mb-2 sm:mb-3">
+                  {React.cloneElement(skill.icon, { 
+                    size: window.innerWidth < 640 ? 24 : 40,
+                    className: skill.icon.props.className 
+                  })}
                 </div>
-                <span className="text-xs sm:text-sm md:text-base text-center">{skill.name}</span>
+                <span className="text-xs sm:text-sm text-center">{skill.name}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -592,56 +601,54 @@ export default function Home() {
         {/* Portfolio Sections */}
         <motion.section
           id="projects"
-          className="py-8 md:py-16"
+          className="py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
               Portfolio
             </h2>
-            <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto px-4">
+            <p className="text-gray-400 max-w-2xl mx-auto">
               Explore my projects across different domains - from full-stack applications to UI/UX designs and graphic
               artwork.
             </p>
           </div>
 
           {/* Combine all software-related projects for the Full Stack tab */}
-          <Suspense fallback={<LoadingSpinner />}>
-            <Tabs
-              fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
-              uiuxProjects={uiuxProjects}
-              graphicsProjects={graphicsProjects}
-            />
-          </Suspense>
+          <Tabs
+            fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
+            uiuxProjects={uiuxProjects}
+            graphicsProjects={graphicsProjects}
+          />
         </motion.section>
 
         {/* Contact Section */}
         <motion.section
           id="contact"
-          className="py-8 md:py-16"
+          className="py-12 sm:py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Get In Touch</h2>
-          <div className="bg-gray-800 rounded-xl p-4 md:p-8 shadow-xl mx-4 md:mx-0">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center">Get In Touch</h2>
+          <div className="bg-gray-800 rounded-xl p-4 sm:p-6 lg:p-8 shadow-xl">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
               <div>
-                <h3 className="text-lg md:text-xl font-semibold mb-4">Contact Information</h3>
-                <div className="space-y-3 md:space-y-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4">Contact Information</h3>
+                <div className="space-y-4">
                   <div className="flex items-center">
                     <FaEnvelope className="mr-3 text-blue-500" />
-                    <a href="mailto:zeruhabesha09@gmail.com" className="hover:text-blue-400 transition-colors text-sm md:text-base break-all">
+                    <a href="mailto:zeruhabesha09@gmail.com" className="hover:text-blue-400 transition-colors">
                       zeruhabesha09@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center">
                     <FaPhone className="mr-3 text-green-500" />
-                    <a href="tel:+0935964964" className="hover:text-green-400 transition-colors text-sm md:text-base">
+                    <a href="tel:+0935964964" className="hover:text-green-400 transition-colors">
                       0935964964
                     </a>
                   </div>
@@ -651,7 +658,7 @@ export default function Home() {
                       href="https://t.me/zeru_hab"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-blue-400 transition-colors text-sm md:text-base"
+                      className="hover:text-blue-400 transition-colors"
                     >
                       Telegram Account
                     </a>
@@ -659,32 +666,32 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <h3 className="text-lg md:text-xl font-semibold mb-4">Send a Message</h3>
-                <form className="space-y-3 md:space-y-4">
+                <h3 className="text-lg sm:text-xl font-semibold mb-4">Send a Message</h3>
+                <form className="space-y-4">
                   <div>
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      className="w-full p-2 sm:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      className="w-full p-2 sm:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     />
                   </div>
                   <div>
                     <textarea
                       placeholder="Your Message"
                       rows={4}
-                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
+                      className="w-full p-2 sm:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm md:text-base"
+                    className="w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm sm:text-base"
                   >
                     Send Message
                   </button>

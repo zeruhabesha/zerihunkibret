@@ -74,15 +74,15 @@ const Nav = () => {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md py-2 md:py-3 shadow-lg" : "bg-transparent py-3 md:py-5"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-2 sm:py-3 shadow-lg" : "bg-transparent py-3 sm:py-5"}`}
       initial="hidden"
       animate="visible"
       variants={navVariants}
     >
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <Link href="/">
           <motion.div
-            className="text-xl md:text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+            className="text-xl sm:text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
             whileHover={{ scale: 1.05 }}
           >
             ZK
@@ -124,16 +124,16 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       <motion.div
-        className={`fixed top-0 right-0 h-screen w-64 bg-gray-900/95 backdrop-blur-md shadow-lg lg:hidden z-50 pt-16 md:pt-20 px-4 mobile-menu`}
+        className={`fixed top-0 right-0 h-screen w-64 bg-gray-900/95 backdrop-blur-md shadow-lg lg:hidden z-50 pt-16 sm:pt-20 px-4 mobile-menu`}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={mobileMenuVariants}
       >
-        <div className="flex flex-col space-y-4 md:space-y-6">
+        <div className="flex flex-col space-y-6">
           {navLinks.map((link, index) => (
             <Link key={index} href={link.href}>
               <span
-                className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors text-base md:text-lg`}
+                className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors text-base sm:text-lg block py-2`}
                 onClick={() => {
                   setIsOpen(false)
                   setActiveLink(link.id)
@@ -144,7 +144,10 @@ const Nav = () => {
             </Link>
           ))}
           <Link href="/resume">
-            <button className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 mt-4">
+            <button 
+              className="w-full px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 mt-4"
+              onClick={() => setIsOpen(false)}
+            >
               Resume
             </button>
           </Link>
