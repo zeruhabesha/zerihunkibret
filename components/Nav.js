@@ -74,15 +74,15 @@ const Nav = () => {
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md py-2 md:py-3 shadow-lg" : "bg-transparent py-3 md:py-5"}`}
       initial="hidden"
       animate="visible"
       variants={navVariants}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link href="/">
           <motion.div
-            className="text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+            className="text-xl md:text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
             whileHover={{ scale: 1.05 }}
           >
             ZK
@@ -90,12 +90,12 @@ const Nav = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden lg:flex space-x-6 xl:space-x-8">
           {navLinks.map((link, index) => (
             <motion.div key={index} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link href={link.href}>
                 <span
-                  className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors cursor-pointer`}
+                  className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors cursor-pointer text-sm xl:text-base`}
                   onClick={() => setActiveLink(link.id)}
                 >
                   {link.name}
@@ -107,7 +107,7 @@ const Nav = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+              className="px-4 xl:px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm xl:text-base"
             >
               Resume
             </motion.button>
@@ -115,25 +115,25 @@ const Nav = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none menu-button">
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <motion.div
-        className={`fixed top-0 right-0 h-screen w-64 bg-gray-900 shadow-lg md:hidden z-50 pt-20 px-4 mobile-menu`}
+        className={`fixed top-0 right-0 h-screen w-64 bg-gray-900/95 backdrop-blur-md shadow-lg lg:hidden z-50 pt-16 md:pt-20 px-4 mobile-menu`}
         initial="closed"
         animate={isOpen ? "open" : "closed"}
         variants={mobileMenuVariants}
       >
-        <div className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-4 md:space-y-6">
           {navLinks.map((link, index) => (
             <Link key={index} href={link.href}>
               <span
-                className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors text-lg`}
+                className={`${activeLink === link.id ? "text-white font-semibold" : "text-gray-300"} hover:text-white transition-colors text-base md:text-lg`}
                 onClick={() => {
                   setIsOpen(false)
                   setActiveLink(link.id)
