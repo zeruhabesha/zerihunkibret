@@ -1,10 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, lazy, Suspense } from "react"
 import { motion } from "framer-motion"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
-import AnimatedAbout from "./animated-about"
 import {
   FaGithub,
   FaLinkedin,
@@ -36,7 +35,17 @@ import {
   SiTypescript,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
-import Tabs from "./tabs"
+
+// Lazy load heavy components
+const AnimatedAbout = lazy(() => import("./animated-about"))
+const Tabs = lazy(() => import("./tabs"))
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="flex justify-center items-center py-8">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
+  </div>
+)
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -374,15 +383,15 @@ export default function Home() {
 
       <main className="container mx-auto px-4 py-8">
         {/* Hero Section */}
-        <section id="home" className="flex flex-col md:flex-row items-center justify-between py-16 min-h-[80vh]">
+        <section id="home" className="flex flex-col lg:flex-row items-center justify-between py-8 md:py-16 min-h-[90vh] md:min-h-[80vh] px-4 md:px-0">
           <motion.div
-            className="md:w-1/2 mb-8 md:mb-0"
+            className="w-full lg:w-1/2 mb-8 lg:mb-0 text-center lg:text-left"
             initial="hidden"
             animate={isLoaded ? "visible" : "hidden"}
             variants={fadeIn}
           >
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 leading-tight"
               variants={fadeIn}
             >
               <Typewriter
@@ -395,7 +404,7 @@ export default function Home() {
                 }}
               />
             </motion.h1>
-            <motion.h2 className="text-2xl md:text-3xl font-semibold mb-6 text-gray-300 h-16" variants={fadeIn}>
+            <motion.h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 text-gray-300 h-12 sm:h-14 md:h-16" variants={fadeIn}>
               <Typewriter
                 options={{
                   strings: ["Full-Stack Developer", "Graphics Designer", "UI/UX Designer"],
@@ -407,74 +416,80 @@ export default function Home() {
                 }}
               />
             </motion.h2>
-            <motion.p className="text-lg text-gray-400 mb-8 leading-relaxed" variants={fadeIn}>
+            <motion.p className="text-base sm:text-lg text-gray-400 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0" variants={fadeIn}>
               With 3+ years of experience as Full Stack Developer, alongside over 5 years in graphic and UI design, I
               bring a strong blend of technical and creative expertise to create robust, user-friendly applications.
             </motion.p>
-            <motion.div className="flex space-x-4" variants={fadeIn}>
+            <motion.div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4" variants={fadeIn}>
               <a
                 href="mailto:zeruhabesha09@gmail.com"
-                className="p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaEnvelope size={24} />
+                <FaEnvelope size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="tel:+0935964964"
-                className="p-3 bg-green-600 hover:bg-green-700 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-green-600 hover:bg-green-700 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaPhone size={24} />
+                <FaPhone size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://github.com/zeruhabesha"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-700 hover:bg-gray-800 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-gray-700 hover:bg-gray-800 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaGithub size={24} />
+                <FaGithub size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://www.linkedin.com/in/zerihunkibret/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-800 hover:bg-blue-900 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-blue-800 hover:bg-blue-900 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaLinkedin size={24} />
+                <FaLinkedin size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://www.youtube.com/@z-graphics-sj4ci"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-red-600 hover:bg-red-700 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaYoutube size={24} />
+                <FaYoutube size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://t.me/zeru_hab" // Replace with your Telegram link
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-blue-500 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaTelegram size={24} />
+                <FaTelegram size={20} className="sm:w-6 sm:h-6" />
               </a>
               <a
                 href="https://wa.me/+251953964964" // Replace with your WhatsApp number
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300"
+                className="p-2 sm:p-3 bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300 hover:scale-110"
               >
-                <FaWhatsapp size={24} />
+                <FaWhatsapp size={20} className="sm:w-6 sm:h-6" />
               </a>
             </motion.div>
           </motion.div>
 
           <motion.div
-            className="md:w-1/2 flex justify-center"
+            className="w-full lg:w-1/2 flex justify-center mt-8 lg:mt-0"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/30">
-              <img src="/images/software-1.jpg" alt="Zerihun Kibret" className="w-full h-full object-cover" />
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg shadow-blue-500/30">
+              <img 
+                src="/images/software-1.jpg" 
+                alt="Zerihun Kibret" 
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
             </div>
           </motion.div>
         </section>
@@ -502,7 +517,9 @@ export default function Home() {
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto rounded-full"></div>
             </motion.div>
 
-            <AnimatedAbout content={aboutContent} />
+            <Suspense fallback={<LoadingSpinner />}>
+              <AnimatedAbout content={aboutContent} />
+            </Suspense>
           </div>
         </motion.section>
 
@@ -543,15 +560,15 @@ export default function Home() {
         {/* Skills Section */}
         <motion.section
           id="skills"
-          className="py-16"
+          className="py-8 md:py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Skills & Technologies</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Skills & Technologies</h2>
           <motion.div
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 lg:gap-8"
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
@@ -560,11 +577,13 @@ export default function Home() {
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="flex flex-col items-center bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2"
+                className="flex flex-col items-center bg-gray-800 rounded-lg p-3 sm:p-4 md:p-6 hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-2"
                 variants={fadeIn}
               >
-                {skill.icon}
-                <span className="mt-3 text-center">{skill.name}</span>
+                <div className="mb-2 md:mb-3">
+                  {skill.icon}
+                </div>
+                <span className="text-xs sm:text-sm md:text-base text-center">{skill.name}</span>
               </motion.div>
             ))}
           </motion.div>
@@ -573,54 +592,56 @@ export default function Home() {
         {/* Portfolio Sections */}
         <motion.section
           id="projects"
-          className="py-16"
+          className="py-8 md:py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
               Portfolio
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-gray-400 max-w-2xl mx-auto px-4">
               Explore my projects across different domains - from full-stack applications to UI/UX designs and graphic
               artwork.
             </p>
           </div>
 
           {/* Combine all software-related projects for the Full Stack tab */}
-          <Tabs
-            fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
-            uiuxProjects={uiuxProjects}
-            graphicsProjects={graphicsProjects}
-          />
+          <Suspense fallback={<LoadingSpinner />}>
+            <Tabs
+              fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
+              uiuxProjects={uiuxProjects}
+              graphicsProjects={graphicsProjects}
+            />
+          </Suspense>
         </motion.section>
 
         {/* Contact Section */}
         <motion.section
           id="contact"
-          className="py-16"
+          className="py-8 md:py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Get In Touch</h2>
-          <div className="bg-gray-800 rounded-xl p-8 shadow-xl">
-            <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Get In Touch</h2>
+          <div className="bg-gray-800 rounded-xl p-4 md:p-8 shadow-xl mx-4 md:mx-0">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div>
-                <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
-                <div className="space-y-4">
+                <h3 className="text-lg md:text-xl font-semibold mb-4">Contact Information</h3>
+                <div className="space-y-3 md:space-y-4">
                   <div className="flex items-center">
                     <FaEnvelope className="mr-3 text-blue-500" />
-                    <a href="mailto:zeruhabesha09@gmail.com" className="hover:text-blue-400 transition-colors">
+                    <a href="mailto:zeruhabesha09@gmail.com" className="hover:text-blue-400 transition-colors text-sm md:text-base break-all">
                       zeruhabesha09@gmail.com
                     </a>
                   </div>
                   <div className="flex items-center">
                     <FaPhone className="mr-3 text-green-500" />
-                    <a href="tel:+0935964964" className="hover:text-green-400 transition-colors">
+                    <a href="tel:+0935964964" className="hover:text-green-400 transition-colors text-sm md:text-base">
                       0935964964
                     </a>
                   </div>
@@ -630,7 +651,7 @@ export default function Home() {
                       href="https://t.me/zeru_hab"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-blue-400 transition-colors"
+                      className="hover:text-blue-400 transition-colors text-sm md:text-base"
                     >
                       Telegram Account
                     </a>
@@ -638,32 +659,32 @@ export default function Home() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-4">Send a Message</h3>
-                <form className="space-y-4">
+                <h3 className="text-lg md:text-xl font-semibold mb-4">Send a Message</h3>
+                <form className="space-y-3 md:space-y-4">
                   <div>
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     />
                   </div>
                   <div>
                     <textarea
                       placeholder="Your Message"
                       rows={4}
-                      className="w-full p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 md:p-3 bg-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
+                    className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm md:text-base"
                   >
                     Send Message
                   </button>
