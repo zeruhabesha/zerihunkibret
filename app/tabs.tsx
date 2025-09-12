@@ -49,9 +49,9 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
   return (
     <div className="w-full">
       {/* Tab Navigation */}
-      <div className="mb-12 relative">
+      <div className="mb-8 md:mb-12 relative px-4 md:px-0">
         <div className="flex justify-center mb-2">
-          <div className="bg-gray-800 p-2 rounded-xl flex relative shadow-xl shadow-blue-500/10">
+          <div className="bg-gray-800 p-1 md:p-2 rounded-xl flex relative shadow-xl shadow-blue-500/10 w-full max-w-md md:max-w-none">
             {/* Active Tab Indicator */}
             <motion.div 
               className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl z-0"
@@ -64,7 +64,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             {/* Tab Buttons */}
             <motion.button
               onClick={() => setActiveTab("fullstack")}
-              className={`relative z-10 px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
+              className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "fullstack" ? "active" : "inactive"}
               whileHover={{ scale: activeTab === "fullstack" ? 1 : 0.98 }}
@@ -78,7 +78,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             
             <motion.button
               onClick={() => setActiveTab("uiux")}
-              className={`relative z-10 px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
+              className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "uiux" ? "active" : "inactive"}
               whileHover={{ scale: activeTab === "uiux" ? 1 : 0.98 }}
@@ -92,7 +92,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             
             <motion.button
               onClick={() => setActiveTab("graphics")}
-              className={`relative z-10 px-8 py-4 text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
+              className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "graphics" ? "active" : "inactive"}
               whileHover={{ scale: activeTab === "graphics" ? 1 : 0.98 }}
@@ -107,41 +107,41 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
         </div>
         
         {/* Tab Icons */}
-        <div className="flex justify-center space-x-16 mt-4">
+        <div className="flex justify-center space-x-8 md:space-x-16 mt-4">
           <motion.div 
             className={`flex flex-col items-center ${activeTab === "fullstack" ? "text-blue-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "fullstack" ? -5 : 0 }}
           >
-            <div className="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <span className="text-xs font-medium">{fullStackProjects.length} Projects</span>
+            <span className="text-xs font-medium hidden sm:block">{fullStackProjects.length} Projects</span>
           </motion.div>
           
           <motion.div 
             className={`flex flex-col items-center ${activeTab === "uiux" ? "text-blue-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "uiux" ? -5 : 0 }}
           >
-            <div className="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
               </svg>
             </div>
-            <span className="text-xs font-medium">{uiuxProjects.length} Designs</span>
+            <span className="text-xs font-medium hidden sm:block">{uiuxProjects.length} Designs</span>
           </motion.div>
           
           <motion.div 
             className={`flex flex-col items-center ${activeTab === "graphics" ? "text-red-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "graphics" ? -5 : 0 }}
           >
-            <div className="w-12 h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-2">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
             </div>
-            <span className="text-xs font-medium">{graphicsProjects.length} Graphics</span>
+            <span className="text-xs font-medium hidden sm:block">{graphicsProjects.length} Graphics</span>
           </motion.div>
         </div>
       </div>
@@ -154,7 +154,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
           >
             {fullStackProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -168,7 +168,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
           >
             {uiuxProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
@@ -182,7 +182,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
           >
             {graphicsProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
