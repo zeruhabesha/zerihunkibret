@@ -249,7 +249,7 @@ export default function Home() {
         "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
     {
-      id: 19,
+      id: 1559,
       title: "Beta Tech Hub",
       description:
         "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
