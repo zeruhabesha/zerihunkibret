@@ -254,7 +254,7 @@ export default function Home() {
       description:
         "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/beta.png",
+      image: "/images/awdamet.png",
       link:
         "https://www.figma.com/design/BtL9ucAsONxiQqyNCCosdA/Untitled?node-id=0-1&p=f&t=eNA8iJlvLUxSh2R2-0",
     },
