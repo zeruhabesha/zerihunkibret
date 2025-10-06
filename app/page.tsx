@@ -249,16 +249,6 @@ export default function Home() {
         "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
     {
-      id: 1559,
-      title: "Beta Tech Hub",
-      description:
-        "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
-      technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/awdamet.png",
-      link:
-        "https://www.figma.com/design/BtL9ucAsONxiQqyNCCosdA/Untitled?node-id=0-1&p=f&t=eNA8iJlvLUxSh2R2-0",
-    },
-    {
       id: 25,
       title: "AutoSpare Hub",
       description: "AutoSpare Hub is an online store specializing in high-quality automotive spare parts.",
