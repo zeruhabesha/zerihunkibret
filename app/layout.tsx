@@ -18,6 +18,13 @@ const inter = Inter({
 
 const description =
   "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zerihunkibret.com"
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+
+const description =
+  "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
 
 export const metadata: Metadata = {
   title: "Zerihun Kibret | Full-Stack Developer",
