@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { Providers } from "../components/providers"
 import { Analytics } from "@vercel/analytics/next"
@@ -10,6 +11,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zerihunkibret.com"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
+
+const description =
+  "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+
+export const metadata: Metadata = {
   title: "Zerihun Kibret | Full-Stack Developer",
   description,
   keywords: [
@@ -45,6 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+      <body className={inter.className}>
         <Providers>
           {children}
           <Analytics />
