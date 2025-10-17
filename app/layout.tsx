@@ -7,7 +7,7 @@ import { Providers } from "../components/providers"
 
 const DEFAULT_DESCRIPTION =
   "Full-Stack Developer with expertise in the MERN stack, PHP, MySQL, and crafted UI/UX experiences."
-const DEFAULT_SITE_URL = "https://zerihunkibret.vercel.app"
+const DEFAULT_SITE_URL = "https://zerihunkibret.com"
 
 const inter = Inter({
   subsets: ["latin"],

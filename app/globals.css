@@ -15,9 +15,10 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: white;
-  background-color: #111827;
+  color: #e2e8f0;
+  background-color: #020617;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* Custom scrollbar */
