@@ -5,6 +5,12 @@ import "./globals.css"
 import { Providers } from "../components/providers"
 import { Analytics } from "@vercel/analytics/next"
 
+const description =
+  "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zerihunkibret.com"
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",

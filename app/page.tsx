@@ -83,6 +83,14 @@ export default function Home() {
       image: "/images/ably.png",
       link: "https://ablyelectric.com",
     },
+     {
+      id: 83,
+      title: "YegnaBiz",
+      description: "Technology services platform for the Ethiopian market.",
+      technologies: ["MERN", "Postgress-SQL", "Redux", "Responsive Design"],
+      image: "/images/ably.png",
+      link: "https://ethio-tech-addis.vercel.app",
+    },
     {
       id: 8,
       title: "Ethio Tech Addis",
