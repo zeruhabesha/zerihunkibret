@@ -5,6 +5,12 @@ import "./globals.css"
 import { Providers } from "../components/providers"
 import { Analytics } from "@vercel/analytics/next"
 
+const description =
+  "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zerihunkibret.com"
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -12,33 +18,15 @@ const inter = Inter({
 
 const description =
   "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
-const defaultSiteUrl = "https://zerihunkibret.com"
-
-const getSiteUrl = (): URL => {
-  const envUrl = process.env.NEXT_PUBLIC_SITE_URL
-
-  if (!envUrl) {
-    return new URL(defaultSiteUrl)
-  }
-
-  try {
-    return new URL(envUrl)
-  } catch (error) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn(
-        "Invalid NEXT_PUBLIC_SITE_URL provided. Falling back to default URL.",
-        error,
-      )
-    }
-
-    return new URL(defaultSiteUrl)
-  }
-}
-
-const siteUrl = getSiteUrl()
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://zerihunkibret.com"
 
 export const metadata: Metadata = {
-  metadataBase: siteUrl,
+  metadataBase: new URL(siteUrl),
+
+const description =
+  "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+
+export const metadata: Metadata = {
   title: "Zerihun Kibret | Full-Stack Developer",
   description,
   keywords: [
@@ -73,6 +61,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <body>
       <body className={inter.className}>
         <Providers>
           {children}
