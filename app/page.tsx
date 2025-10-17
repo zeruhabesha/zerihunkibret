@@ -80,7 +80,7 @@ export default function Home() {
       id: 5,
       title: "Ably Electric",
       description: "Website for Ably Electric showcasing electrical services and products.",
-      technologies: ["PHP", "CSS", "JavaScript", "MySQL"],
+      technologies: ["Nextjs", "Postgress-SQL", "Typescripts","NodeJS","ExpressJS", "Responsive Design"],
       image: "/images/ably.png",
       link: "https://ablyelectric.com",
     },
@@ -88,9 +88,9 @@ export default function Home() {
       id: 83,
       title: "YegnaBiz",
       description: "Technology services platform for the Ethiopian market.",
-      technologies: ["MERN", "Postgress-SQL", "Redux", "Responsive Design"],
-      image: "/images/ably.png",
-      link: "https://ethio-tech-addis.vercel.app",
+      technologies: ["Next", "Postgress-SQL", "Typescripts","NodeJS","ExpressJS", "Responsive Design"],
+      image: "/images/yegna.png",
+      link: "https://yegna-biz.vercel.app",
     },
     {
       id: 8,
@@ -263,7 +263,7 @@ export default function Home() {
       description:
         "Collection of UI/UX design projects showcasing various interfaces and user experiences.",
       technologies: ["Figma", "UI/UX", "Design Systems"],
-      image: "/images/awdamet.png",
+      image: "/images/betafigma.png",
       link:
         "https://www.figma.com/design/BtL9ucAsONxiQqyNCCosdA/Untitled?node-id=0-1&p=f&t=eNA8iJlvLUxSh2R2-0",
     },
