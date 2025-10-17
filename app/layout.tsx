@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   viewport: {
     width: "device-width",
     initialScale: 1,
-    themeColor: "#0f172a",
   },
+  themeColor: "#0f172a",
   openGraph: {
     title: "Zerihun Kibret | Full-Stack Developer",
     description: DEFAULT_DESCRIPTION,
