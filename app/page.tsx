@@ -283,7 +283,7 @@ export default function Home() {
       technologies: ["Figma", "UI/UX", "Design Systems"],
       image: "/images/Partner.png",
       link:
-        "https://www.figma.com/proto/Gk7ndUdZAmZXZGnL8ypPhy/Untitled?node-id=0-1&t=NRWh4AXHZC2vu3Kh-1",
+        "https://www.figma.com/design/2elvECjmfg4Jq4ywxNhGQV/Partner-Portal---Mobile--Community-?node-id=0-1&p=f&t=hfs31cgIXgULHUzp-0",
     },
     {
       id: 16,
