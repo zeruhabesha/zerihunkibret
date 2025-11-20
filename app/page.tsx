@@ -448,19 +448,19 @@ export default function Home() {
 
   const focusAreas = [
     {
-      title: "Product Engineering",
+      title: "Software",
       description:
-        "I lead end-to-end MERN and Next.js builds with attention to scalable architecture, testing, and deployment workflows.",
+        "Full-stack builds that blend scalable architecture, testing, and deployment so releases stay reliable.",
     },
     {
-      title: "Process Automation",
+      title: "UI Design",
       description:
-        "From property ecosystems to tender management, I streamline critical business operations with modern SaaS experiences.",
+        "Interface systems crafted with UX strategy so every flow communicates clearly and looks on-brand.",
     },
     {
-      title: "Design-Led Delivery",
+      title: "Graphics",
       description:
-        "Marrying UI/UX strategy with implementation ensures every interface communicates clearly and keeps people engaged.",
+        "Supportive visuals and marketing graphics that extend the product story across touchpoints.",
     },
   ]
 
@@ -739,16 +739,22 @@ export default function Home() {
                 variants={fadeIn}
               >
                 <AnimatedAbout content={aboutContent} />
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                  {focusAreas.map((item) => (
-                    <div
-                      key={item.title}
-                      className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
-                    >
-                      <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
-                      <p className="mt-2 text-sm text-slate-400">{item.description}</p>
-                    </div>
-                  ))}
+                <div className="mt-10 space-y-4">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
+                    <span className="text-[13px] text-slate-400">Product partnerships with clear outcomes.</span>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    {focusAreas.map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
+                      >
+                        <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
+                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
               <motion.div
