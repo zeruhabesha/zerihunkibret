@@ -448,19 +448,19 @@ export default function Home() {
 
   const focusAreas = [
     {
-      title: "Product Engineering",
+      title: "Software",
       description:
-        "I lead end-to-end MERN and Next.js builds with attention to scalable architecture, testing, and deployment workflows.",
+        "Full-stack builds that blend scalable architecture, testing, and deployment so releases stay reliable.",
     },
     {
-      title: "Process Automation",
+      title: "UI Design",
       description:
-        "From property ecosystems to tender management, I streamline critical business operations with modern SaaS experiences.",
+        "Interface systems crafted with UX strategy so every flow communicates clearly and looks on-brand.",
     },
     {
-      title: "Design-Led Delivery",
+      title: "Graphics",
       description:
-        "Marrying UI/UX strategy with implementation ensures every interface communicates clearly and keeps people engaged.",
+        "Supportive visuals and marketing graphics that extend the product story across touchpoints.",
     },
   ]
 
@@ -741,6 +741,8 @@ export default function Home() {
                 <AnimatedAbout content={aboutContent} />
                 <div className="mt-10 space-y-4">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
+                    <span className="text-[13px] text-slate-400">Product partnerships with clear outcomes.</span>
                     <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">
                       Design x Development
                     </span>
