@@ -739,16 +739,24 @@ export default function Home() {
                 variants={fadeIn}
               >
                 <AnimatedAbout content={aboutContent} />
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                  {focusAreas.map((item) => (
-                    <div
-                      key={item.title}
-                      className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
-                    >
-                      <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
-                      <p className="mt-2 text-sm text-slate-400">{item.description}</p>
-                    </div>
-                  ))}
+                <div className="mt-10 space-y-4">
+                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">
+                      Design x Development
+                    </span>
+                    <span className="text-[13px] text-slate-400">Product partnerships centered on delivery.</span>
+                  </div>
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    {focusAreas.map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
+                      >
+                        <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
+                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
               <motion.div
