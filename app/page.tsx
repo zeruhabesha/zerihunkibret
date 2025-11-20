@@ -743,6 +743,10 @@ export default function Home() {
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
                     <span className="text-[13px] text-slate-400">Product partnerships with clear outcomes.</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">
+                      Design x Development
+                    </span>
+                    <span className="text-[13px] text-slate-400">Product partnerships centered on delivery.</span>
                   </div>
                   <div className="grid gap-6 sm:grid-cols-2">
                     {focusAreas.map((item) => (
