@@ -16,6 +16,9 @@ import {
   FaGraduationCap,
   FaCertificate,
   FaYoutube,
+  FaRocket,
+  FaClock,
+  FaPuzzlePiece,
 } from "react-icons/fa"
 import {
   SiMui,
@@ -461,6 +464,59 @@ export default function Home() {
     },
   ]
 
+  const servicePackages: {
+    title: string
+    timeline: string
+    focus: string
+    accent: string
+    Icon: React.ComponentType<{ size?: number; className?: string }>
+    deliverables: string[]
+  }[] = [
+    {
+      title: "Discovery Sprint",
+      timeline: "2 - 3 weeks",
+      focus: "Vision, UX direction, and a validated prototype",
+      accent: "from-blue-500/20 via-blue-500/10 to-slate-950",
+      Icon: FaPuzzlePiece,
+      deliverables: [
+        "Product narrative, audience and success metrics",
+        "Clickable Figma prototype with motion guidance",
+        "Technical blueprint for the first build",
+      ],
+    },
+    {
+      title: "MVP Build",
+      timeline: "4 - 8 weeks",
+      focus: "Full-stack implementation with crisp UI systems",
+      accent: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
+      Icon: FaRocket,
+      deliverables: [
+        "Component-driven Next.js frontend with design tokens",
+        "API layer with auth, data models, and monitoring",
+        "CI-ready deployments plus rollout playbook",
+      ],
+    },
+    {
+      title: "Scale & Care",
+      timeline: "Monthly partnership",
+      focus: "Performance tuning, design QA, and feature velocity",
+      accent: "from-purple-500/20 via-indigo-400/10 to-slate-950",
+      Icon: FaClock,
+      deliverables: [
+        "Accessibility and lighthouse optimizations",
+        "Experimentation backlog with weekly demos",
+        "Team enablement with docs and pairing",
+      ],
+    },
+  ]
+
+  const collaborationBoosters = [
+    "Async updates with Loom recaps and metrics dashboards",
+    "Weekly office hours for unblockers and roadmap alignment",
+    "Design QA checklist to keep the experience consistent",
+    "Launch readiness runbooks with rollback strategies",
+  ]
+
   const socialProfiles: {
     Icon: React.ComponentType<{ size?: number; className?: string }>
     label: string
@@ -720,6 +776,114 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="services" className="relative py-24">
+          <div className="mx-auto max-w-6xl px-6">
+            <motion.div
+              className="mx-auto max-w-3xl text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">Services</span>
+              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Product partnerships with clear outcomes</h2>
+              <p className="mt-4 text-base text-slate-300 sm:text-lg">
+                Whether you need rapid validation, a production-ready MVP, or ongoing delivery support, each engagement is structured
+                for velocity and polish.
+              </p>
+            </motion.div>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {servicePackages.map((pkg, index) => (
+                <motion.div
+                  key={pkg.title}
+                  className={`relative overflow-hidden rounded-3xl border border-slate-800/70 bg-gradient-to-br ${pkg.accent} p-6 shadow-[0_35px_80px_-50px_rgba(59,130,246,0.65)] backdrop-blur`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.08 }}
+                  whileHover={{ translateY: -6 }}
+                >
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">{pkg.timeline}</p>
+                      <h3 className="mt-2 text-xl font-semibold text-slate-50">{pkg.title}</h3>
+                    </div>
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/60 bg-slate-900/70 text-blue-200">
+                      <pkg.Icon size={18} />
+                    </div>
+                  </div>
+                  <p className="mt-3 text-sm text-slate-300">{pkg.focus}</p>
+                  <div className="mt-4 space-y-3 rounded-2xl border border-slate-800/60 bg-slate-950/50 p-4">
+                    {pkg.deliverables.map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" />
+                        <p className="text-sm text-slate-200">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-5 flex items-center justify-between text-xs text-slate-400">
+                    <span className="rounded-full border border-blue-400/40 bg-blue-500/10 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-blue-100">
+                      Delivery ready
+                    </span>
+                    <span className="text-slate-400">Includes retros & handoff</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              className="mt-12 grid gap-6 rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 shadow-[0_35px_80px_-50px_rgba(16,185,129,0.55)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr]"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div>
+                <h3 className="text-2xl font-semibold text-slate-100">Collaboration boosters</h3>
+                <p className="mt-3 text-sm text-slate-400">
+                  Keep teams aligned with transparent rituals and crisp documentation—no surprises, only momentum.
+                </p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {collaborationBoosters.map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-emerald-50"
+                    >
+                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
+                      <p className="text-sm leading-relaxed text-emerald-50/90">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-800/60 bg-slate-950/60 p-6">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300/80">Next step</p>
+                  <h4 className="mt-2 text-xl font-semibold text-slate-50">Two-week pilot to prove fit</h4>
+                  <p className="mt-3 text-sm text-slate-400">
+                    Get a scoped pilot with a mini roadmap, design QA, and a weekly demo. If it is not a fit, keep the plan—no hard feelings.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="#contact"
+                    className="group inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
+                  >
+                    Start a pilot
+                    <FaArrowRight className="transition group-hover:translate-x-1" />
+                  </a>
+                  <a
+                    href="/resume"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-400/70 hover:text-emerald-200"
+                  >
+                    View credentials
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         <section id="journey" className="relative py-24">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
@@ -917,6 +1081,50 @@ export default function Home() {
                       placeholder="you@example.com"
                       className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
                     />
+                  </div>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label
+                        htmlFor="projectType"
+                        className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500"
+                      >
+                        Project type
+                      </label>
+                      <select
+                        id="projectType"
+                        className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Choose an option
+                        </option>
+                        <option>Web app build</option>
+                        <option>Design system</option>
+                        <option>Process automation</option>
+                        <option>Brand & UI refresh</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="budget"
+                        className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500"
+                      >
+                        Budget range
+                      </label>
+                      <select
+                        id="budget"
+                        className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
+                        defaultValue=""
+                      >
+                        <option value="" disabled>
+                          Select a range
+                        </option>
+                        <option>$2k - $5k</option>
+                        <option>$5k - $10k</option>
+                        <option>$10k - $25k</option>
+                        <option>$25k+</option>
+                      </select>
+                    </div>
                   </div>
                   <div>
                     <label htmlFor="project" className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
