@@ -1035,50 +1035,6 @@ export default function Home() {
                       className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
                     />
                   </div>
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label
-                        htmlFor="projectType"
-                        className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500"
-                      >
-                        Project type
-                      </label>
-                      <select
-                        id="projectType"
-                        className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Choose an option
-                        </option>
-                        <option>Web app build</option>
-                        <option>Design system</option>
-                        <option>Process automation</option>
-                        <option>Brand & UI refresh</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="budget"
-                        className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500"
-                      >
-                        Budget range
-                      </label>
-                      <select
-                        id="budget"
-                        className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
-                        defaultValue=""
-                      >
-                        <option value="" disabled>
-                          Select a range
-                        </option>
-                        <option>$2k - $5k</option>
-                        <option>$5k - $10k</option>
-                        <option>$10k - $25k</option>
-                        <option>$25k+</option>
-                      </select>
-                    </div>
-                  </div>
                   <div>
                     <label htmlFor="project" className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
                       Project details
