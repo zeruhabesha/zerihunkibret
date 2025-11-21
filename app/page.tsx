@@ -16,8 +16,8 @@ import {
   FaGraduationCap,
   FaCertificate,
   FaYoutube,
-  FaRocket,
-  FaClock,
+  FaCode,
+  FaPaintBrush,
   FaPuzzlePiece,
 } from "react-icons/fa"
 import {
@@ -473,48 +473,41 @@ export default function Home() {
     deliverables: string[]
   }[] = [
     {
-      title: "Discovery Sprint",
-      timeline: "2 - 3 weeks",
-      focus: "Vision, UX direction, and a validated prototype",
+      title: "Software Development",
+      timeline: "4 - 10 weeks",
+      focus: "Robust full-stack builds tailored to your roadmap",
       accent: "from-blue-500/20 via-blue-500/10 to-slate-950",
+      Icon: FaCode,
+      deliverables: [
+        "API architecture, authentication, and data modeling",
+        "Responsive Next.js frontends with component libraries",
+        "CI/CD setup with monitoring and release playbooks",
+      ],
+    },
+    {
+      title: "UI Designing",
+      timeline: "2 - 4 weeks",
+      focus: "Interfaces that balance clarity, craft, and conversion",
+      accent: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
       Icon: FaPuzzlePiece,
       deliverables: [
-        "Product narrative, audience and success metrics",
-        "Clickable Figma prototype with motion guidance",
-        "Technical blueprint for the first build",
+        "Design systems with tokens, states, and accessibility",
+        "High-fidelity flows, prototypes, and motion guidance",
+        "Developer-ready specs with annotations and assets",
       ],
     },
     {
-      title: "MVP Build",
-      timeline: "4 - 8 weeks",
-      focus: "Full-stack implementation with crisp UI systems",
-      accent: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
-      Icon: FaRocket,
-      deliverables: [
-        "Component-driven Next.js frontend with design tokens",
-        "API layer with auth, data models, and monitoring",
-        "CI-ready deployments plus rollout playbook",
-      ],
-    },
-    {
-      title: "Scale & Care",
-      timeline: "Monthly partnership",
-      focus: "Performance tuning, design QA, and feature velocity",
+      title: "Graphics Designing",
+      timeline: "1 - 3 weeks",
+      focus: "Visual stories that extend your brand across touchpoints",
       accent: "from-purple-500/20 via-indigo-400/10 to-slate-950",
-      Icon: FaClock,
+      Icon: FaPaintBrush,
       deliverables: [
-        "Accessibility and lighthouse optimizations",
-        "Experimentation backlog with weekly demos",
-        "Team enablement with docs and pairing",
+        "Social and marketing graphics aligned to brand guidelines",
+        "Presentation decks with custom illustrations and layouts",
+        "Campaign-ready assets optimized for web and print",
       ],
     },
-  ]
-
-  const collaborationBoosters = [
-    "Async updates with Loom recaps and metrics dashboards",
-    "Weekly office hours for unblockers and roadmap alignment",
-    "Design QA checklist to keep the experience consistent",
-    "Launch readiness runbooks with rollback strategies",
   ]
 
   const socialProfiles: {
@@ -742,11 +735,11 @@ export default function Home() {
                 <div className="mt-10 space-y-4">
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                     <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
-                    <span className="text-[13px] text-slate-400">Product partnerships with clear outcomes.</span>
+                    <span className="text-[13px] text-slate-400">Software development aligned to clear outcomes.</span>
                     <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">
                       Design x Development
                     </span>
-                    <span className="text-[13px] text-slate-400">Product partnerships centered on delivery.</span>
+                    <span className="text-[13px] text-slate-400">Design support across UI and graphics.</span>
                   </div>
                   <div className="grid gap-6 sm:grid-cols-2">
                     {focusAreas.map((item) => (
@@ -796,10 +789,10 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">Services</span>
-              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Product partnerships with clear outcomes</h2>
+              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Services to design, build, and brand</h2>
               <p className="mt-4 text-base text-slate-300 sm:text-lg">
-                Whether you need rapid validation, a production-ready MVP, or ongoing delivery support, each engagement is structured
-                for velocity and polish.
+                End-to-end support across software development, UI design, and graphics—delivered with the same polished, modern
+                experience.
               </p>
             </motion.div>
 
@@ -841,56 +834,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              className="mt-12 grid gap-6 rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 shadow-[0_35px_80px_-50px_rgba(16,185,129,0.55)] backdrop-blur lg:grid-cols-[1.1fr_0.9fr]"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div>
-                <h3 className="text-2xl font-semibold text-slate-100">Collaboration boosters</h3>
-                <p className="mt-3 text-sm text-slate-400">
-                  Keep teams aligned with transparent rituals and crisp documentation—no surprises, only momentum.
-                </p>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {collaborationBoosters.map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 text-emerald-50"
-                    >
-                      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
-                      <p className="text-sm leading-relaxed text-emerald-50/90">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="flex flex-col justify-between gap-6 rounded-2xl border border-slate-800/60 bg-slate-950/60 p-6">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-300/80">Next step</p>
-                  <h4 className="mt-2 text-xl font-semibold text-slate-50">Two-week pilot to prove fit</h4>
-                  <p className="mt-3 text-sm text-slate-400">
-                    Get a scoped pilot with a mini roadmap, design QA, and a weekly demo. If it is not a fit, keep the plan—no hard feelings.
-                  </p>
-                </div>
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="#contact"
-                    className="group inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 transition hover:bg-emerald-400"
-                  >
-                    Start a pilot
-                    <FaArrowRight className="transition group-hover:translate-x-1" />
-                  </a>
-                  <a
-                    href="/resume"
-                    className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-emerald-400/70 hover:text-emerald-200"
-                  >
-                    View credentials
-                  </a>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
 
