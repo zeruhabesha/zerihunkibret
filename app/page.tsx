@@ -142,7 +142,7 @@ export default function Home() {
         "Cafe management system with dashboards for sales, orders, inventory, and more, offering real-time insights and control.",
       technologies: ["React", "NextJS", "TypeScript", "TailwindCSS"],
       image: "/images/cafe.png",
-      link: "https://cafe-management-rr6u.vercel.app/",
+      link: "https://bunnaflow.vercel.app",
     },
     {
       id: 36,
