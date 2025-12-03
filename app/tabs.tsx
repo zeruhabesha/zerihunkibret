@@ -193,3 +193,4 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
     </div>
   )
 }
+ 

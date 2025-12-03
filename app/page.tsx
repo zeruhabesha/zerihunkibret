@@ -38,8 +38,13 @@ import {
   SiWordpress,
   SiTailwindcss,
   SiTypescript,
+  SiOpensearch,
+  SiShopify,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
+import ScrollProgress from "../components/ScrollProgress"
+import ParallaxSection from "../components/ParallaxSection"
+import Image from "next/image"
 
 // Lazy load heavy components
 const AnimatedAbout = dynamic(() => import("./animated-about"), {
@@ -51,15 +56,11 @@ const Tabs = dynamic(() => import("./tabs"), {
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(true) // Set to true since Next.js Image handles loading
   const [isSmallScreen, setIsSmallScreen] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
-    // Preload critical image
-    const img = new Image()
-    img.onload = () => setImageLoaded(true)
-    img.src = "/images/software-1.jpg"
 
     // Guard usage of window for SSR and keep responsive icon sizing in state
     const updateSize = () => setIsSmallScreen(typeof window !== "undefined" && window.innerWidth < 640)
@@ -83,15 +84,15 @@ export default function Home() {
       id: 5,
       title: "Ably Electric",
       description: "Website for Ably Electric showcasing electrical services and products.",
-      technologies: ["Nextjs", "Postgress-SQL", "Typescripts","NodeJS","ExpressJS", "Responsive Design"],
+      technologies: ["Nextjs", "Postgress-SQL", "Typescripts", "NodeJS", "ExpressJS", "Responsive Design"],
       image: "/images/ably.png",
       link: "https://ablyelectric.com",
     },
-     {
+    {
       id: 83,
       title: "YegnaBiz",
       description: "Technology services platform for the Ethiopian market.",
-      technologies: ["Next", "Postgress-SQL", "Typescripts","NodeJS","ExpressJS", "Responsive Design"],
+      technologies: ["Next", "Postgress-SQL", "Typescripts", "NodeJS", "ExpressJS", "Responsive Design"],
       image: "/images/yegna.png",
       link: "https://yegna-biz.vercel.app",
     },
@@ -260,7 +261,7 @@ export default function Home() {
       link:
         "https://www.figma.com/design/KxIHbb2NXYR0tRibcbcjZ9/Untitled?node-id=0-1&p=f&t=Ak8k7nHclrKt2fzH-0",
     },
-      {
+    {
       id: 125,
       title: "Beta Tech Hub",
       description:
@@ -379,28 +380,32 @@ export default function Home() {
   ]
 
   // Store icon component types instead of elements to avoid React.cloneElement and SSR issues
-  const skills: { name: string; Icon: React.ComponentType<{ size?: number; className?: string }>;
-    className?: string }[] = [
-    { name: "React", Icon: SiReact, className: "text-blue-500" },
-    { name: "Node.js", Icon: SiNodedotjs, className: "text-green-600" },
-    { name: "Next.js", Icon: SiNextdotjs, className: "text-black" },
-    { name: "MongoDB", Icon: SiMongodb, className: "text-green-500" },
-    { name: "Express", Icon: SiExpress, className: "text-gray-700" },
-    { name: "PHP", Icon: SiPhp, className: "text-blue-600" },
-    { name: "MySQL", Icon: SiMysql, className: "text-blue-800" },
-    { name: "Laravel", Icon: SiLaravel, className: "text-red-600" },
-    { name: "Flutter", Icon: SiFlutter, className: "text-blue-400" },
-    { name: "Material UI", Icon: SiMui, className: "text-blue-600" },
-    { name: "CoreUI", Icon: () => <span className="text-blue-500 font-bold text-xl">CoreUI</span> },
-    { name: "Tailwind", Icon: SiTailwindcss, className: "text-blue-400" },
-    { name: "WordPress", Icon: SiWordpress, className: "text-blue-700" },
-    { name: "Figma", Icon: SiFigma, className: "text-blue-500" },
-    { name: "TypeScript", Icon: SiTypescript, className: "text-blue-600" },
-    { name: "Photoshop", Icon: SiAdobephotoshop, className: "text-blue-900" },
-    { name: "Illustrator", Icon: SiAdobeillustrator, className: "text-orange-600" },
-    { name: "Canva", Icon: SiCanva, className: "text-blue-500" },
-    { name: "CapCut", Icon: () => <span className="text-black font-bold text-xl">CapCut</span> },
-  ]
+  const skills: {
+    name: string; Icon: React.ComponentType<{ size?: number; className?: string }>;
+    className?: string
+  }[] = [
+      { name: "React", Icon: SiReact, className: "text-blue-500" },
+      { name: "Node.js", Icon: SiNodedotjs, className: "text-green-600" },
+      { name: "Next.js", Icon: SiNextdotjs, className: "text-black" },
+      { name: "MongoDB", Icon: SiMongodb, className: "text-green-500" },
+      { name: "Express", Icon: SiExpress, className: "text-gray-700" },
+      { name: "PHP", Icon: SiPhp, className: "text-blue-600" },
+      { name: "MySQL", Icon: SiMysql, className: "text-blue-800" },
+      { name: "Laravel", Icon: SiLaravel, className: "text-red-600" },
+      { name: "Flutter", Icon: SiFlutter, className: "text-blue-400" },
+      { name: "Material UI", Icon: SiMui, className: "text-blue-600" },
+      { name: "CoreUI", Icon: () => <span className="text-blue-500 font-bold text-xl">CoreUI</span> },
+      { name: "Tailwind", Icon: SiTailwindcss, className: "text-blue-400" },
+      { name: "WordPress", Icon: SiWordpress, className: "text-blue-700" },
+      { name: "Figma", Icon: SiFigma, className: "text-blue-500" },
+      { name: "TypeScript", Icon: SiTypescript, className: "text-blue-600" },
+      { name: "OpenSearch", Icon: SiOpensearch, className: "text-blue-500" },
+      { name: "Shopify", Icon: SiShopify, className: "text-green-600" },
+      { name: "Photoshop", Icon: SiAdobephotoshop, className: "text-blue-900" },
+      { name: "Illustrator", Icon: SiAdobeillustrator, className: "text-orange-600" },
+      { name: "Canva", Icon: SiCanva, className: "text-blue-500" },
+      { name: "CapCut", Icon: () => <span className="text-black font-bold text-xl">CapCut</span> },
+    ]
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -420,7 +425,7 @@ export default function Home() {
   // About me content
   const aboutContent = {
     paragraphs: [
-      "I am a versatile Full-Stack Developer with over 3 years of specialized experience in the MERN stack (MongoDB, Express.js, React, Node.js), complemented by proficiency in PHP and MySQL. My journey in web development began with a passion for creating intuitive, functional applications that solve real-world problems.",
+      "I am a versatile Full-Stack Developer with 4 years of specialized experience in the MERN stack (MongoDB, Express.js, React, Node.js), complemented by proficiency in PHP and MySQL. My journey in web development began with a passion for creating intuitive, functional applications that solve real-world problems.",
       "At Beta Tech Hub, I led the development of several significant projects that showcased my technical versatility. I architected and implemented a comprehensive Property Management System that streamlined tenant management, maintenance requests, and financial tracking. The Tender Management System I developed revolutionized the procurement process by automating bid submissions, evaluations, and award notifications, significantly reducing processing time and improving transparency.",
       "One of my most impactful projects was a full-stack medical practice application that integrated appointment scheduling, patient records management, and billing systems. This solution improved operational efficiency by 40% and enhanced the patient experience through an intuitive interface and automated reminders.",
       "My technical expertise extends beyond development frameworks to include UI component libraries like MaterialUI and CoreUI. I leverage these tools to create consistent, responsive interfaces that adhere to modern design principles while maintaining excellent performance. I'm particularly skilled at implementing complex data visualization components and interactive elements that enhance user engagement.",
@@ -431,7 +436,7 @@ export default function Home() {
   const heroStats = [
     {
       label: "Full-stack experience",
-      value: "3+ yrs",
+      value: "4+ yrs",
       description: "Delivering resilient web applications from discovery to deployment.",
     },
     {
@@ -472,55 +477,55 @@ export default function Home() {
     Icon: React.ComponentType<{ size?: number; className?: string }>
     deliverables: string[]
   }[] = [
-    {
-      title: "Software Development",
-      timeline: "4 - 10 weeks",
-      focus: "Robust full-stack builds tailored to your roadmap",
-      accent: "from-blue-500/20 via-blue-500/10 to-slate-950",
-      Icon: FaCode,
-      deliverables: [
-        "API architecture, authentication, and data modeling",
-        "Responsive Next.js frontends with component libraries",
-        "CI/CD setup with monitoring and release playbooks",
-      ],
-    },
-    {
-      title: "UI Designing",
-      timeline: "2 - 4 weeks",
-      focus: "Interfaces that balance clarity, craft, and conversion",
-      accent: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
-      Icon: FaPuzzlePiece,
-      deliverables: [
-        "Design systems with tokens, states, and accessibility",
-        "High-fidelity flows, prototypes, and motion guidance",
-        "Developer-ready specs with annotations and assets",
-      ],
-    },
-    {
-      title: "Graphics Designing",
-      timeline: "1 - 3 weeks",
-      focus: "Visual stories that extend your brand across touchpoints",
-      accent: "from-purple-500/20 via-indigo-400/10 to-slate-950",
-      Icon: FaPaintBrush,
-      deliverables: [
-        "Social and marketing graphics aligned to brand guidelines",
-        "Presentation decks with custom illustrations and layouts",
-        "Campaign-ready assets optimized for web and print",
-      ],
-    },
-  ]
+      {
+        title: "Software Development",
+        timeline: "4 - 10 weeks",
+        focus: "Robust full-stack builds tailored to your roadmap",
+        accent: "from-blue-500/20 via-blue-500/10 to-slate-950",
+        Icon: FaCode,
+        deliverables: [
+          "API architecture, authentication, and data modeling",
+          "Responsive Next.js frontends with component libraries",
+          "CI/CD setup with monitoring and release playbooks",
+        ],
+      },
+      {
+        title: "UI Designing",
+        timeline: "2 - 4 weeks",
+        focus: "Interfaces that balance clarity, craft, and conversion",
+        accent: "from-emerald-500/20 via-emerald-400/10 to-slate-950",
+        Icon: FaPuzzlePiece,
+        deliverables: [
+          "Design systems with tokens, states, and accessibility",
+          "High-fidelity flows, prototypes, and motion guidance",
+          "Developer-ready specs with annotations and assets",
+        ],
+      },
+      {
+        title: "Graphics Designing",
+        timeline: "1 - 3 weeks",
+        focus: "Visual stories that extend your brand across touchpoints",
+        accent: "from-purple-500/20 via-indigo-400/10 to-slate-950",
+        Icon: FaPaintBrush,
+        deliverables: [
+          "Social and marketing graphics aligned to brand guidelines",
+          "Presentation decks with custom illustrations and layouts",
+          "Campaign-ready assets optimized for web and print",
+        ],
+      },
+    ]
 
   const socialProfiles: {
     Icon: React.ComponentType<{ size?: number; className?: string }>
     label: string
     href: string
   }[] = [
-    { Icon: FaGithub, label: "GitHub", href: "https://github.com/zeruhabesha" },
-    { Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/zerihunkibret/" },
-    { Icon: FaTelegram, label: "Telegram", href: "https://t.me/zeru_hab" },
-    { Icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/251935964964" },
-    { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@z-graphics-sj4ci" },
-  ]
+      { Icon: FaGithub, label: "GitHub", href: "https://github.com/zeruhabesha" },
+      { Icon: FaLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/zerihunkibret/" },
+      { Icon: FaTelegram, label: "Telegram", href: "https://t.me/zeru_hab" },
+      { Icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/251935964964" },
+      { Icon: FaYoutube, label: "YouTube", href: "https://www.youtube.com/@z-graphics-sj4ci" },
+    ]
 
   const contactMethods: {
     Icon: React.ComponentType<{ size?: number; className?: string }>
@@ -529,21 +534,21 @@ export default function Home() {
     href: string
     isExternal?: boolean
   }[] = [
-    {
-      Icon: FaEnvelope,
-      label: "Email",
-      value: "zeruhabesha09@gmail.com",
-      href: "mailto:zeruhabesha09@gmail.com",
-    },
-    { Icon: FaPhone, label: "Phone", value: "+251 935 964 964", href: "tel:+251935964964" },
-    {
-      Icon: FaTelegram,
-      label: "Telegram",
-      value: "@zeru_hab",
-      href: "https://t.me/zeru_hab",
-      isExternal: true,
-    },
-  ]
+      {
+        Icon: FaEnvelope,
+        label: "Email",
+        value: "zeruhabesha09@gmail.com",
+        href: "mailto:zeruhabesha09@gmail.com",
+      },
+      { Icon: FaPhone, label: "Phone", value: "+251 935 964 964", href: "tel:+251935964964" },
+      {
+        Icon: FaTelegram,
+        label: "Telegram",
+        value: "@zeru_hab",
+        href: "https://t.me/zeru_hab",
+        isExternal: true,
+      },
+    ]
 
   const learningTimeline: {
     Icon: React.ComponentType<{ size?: number; className?: string }>
@@ -551,21 +556,21 @@ export default function Home() {
     period: string
     description: string
   }[] = [
-    {
-      Icon: FaGraduationCap,
-      title: "Bachelor's Degree in Computer Science",
-      period: "2016 - 2020",
-      description:
-        "Completed a comprehensive computer science program with a focus on software engineering, systems design, and algorithms.",
-    },
-    {
-      Icon: FaCertificate,
-      title: "CCNA Certification",
-      period: "2023 - 2024",
-      description:
-        "Cisco Certified Network Associate credential demonstrating networking expertise and infrastructure fundamentals.",
-    },
-  ]
+      {
+        Icon: FaGraduationCap,
+        title: "Bachelor's Degree in Computer Science",
+        period: "2016 - 2020",
+        description:
+          "Completed a comprehensive computer science program with a focus on software engineering, systems design, and algorithms.",
+      },
+      {
+        Icon: FaCertificate,
+        title: "CCNA Certification",
+        period: "2023 - 2024",
+        description:
+          "Cisco Certified Network Associate credential demonstrating networking expertise and infrastructure fundamentals.",
+      },
+    ]
 
   const projectHighlights = [
     "Scaled a property management platform with end-to-end tenant, maintenance, and finance workflows.",
@@ -575,6 +580,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+      <ScrollProgress />
       <div className="pointer-events-none fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(8,145,178,0.15),_transparent_58%)]" />
@@ -661,20 +667,25 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-            <motion.div
-              className="relative flex flex-1 justify-center lg:justify-end"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isLoaded && imageLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative">
+            <ParallaxSection offset={30} className="relative flex flex-1 justify-center lg:justify-end">
+              <motion.div
+                className="relative"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isLoaded && imageLoaded ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.8 }}
+              >
                 <div className="absolute -inset-8 rounded-[36px] bg-gradient-to-br from-blue-500/30 via-transparent to-indigo-500/10 blur-3xl" />
                 <div className="relative overflow-hidden rounded-[32px] border border-slate-800/60 bg-slate-900/70 shadow-2xl shadow-blue-900/40 backdrop-blur">
                   {imageLoaded ? (
-                    <img
+                    <Image
                       src="/images/software-1.jpg"
                       alt="Zerihun Kibret working on a product design"
+                      width={380}
+                      height={460}
+                      priority
                       className="h-[360px] w-[320px] object-cover sm:h-[420px] sm:w-[360px] lg:h-[460px] lg:w-[380px]"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAB//2Q=="
                     />
                   ) : (
                     <div className="flex h-[360px] w-[320px] items-center justify-center bg-slate-800 sm:h-[420px] sm:w-[360px] lg:h-[460px] lg:w-[380px]">
@@ -702,8 +713,8 @@ export default function Home() {
                   <p className="mt-1 text-sm font-semibold">40% efficiency gains</p>
                   <p className="text-xs text-emerald-100/80">from delivering the medical practice platform</p>
                 </motion.div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </ParallaxSection>
           </div>
         </section>
 
@@ -723,36 +734,15 @@ export default function Home() {
                 businesses forward.
               </p>
             </motion.div>
-            <div className="mt-14 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div className="mt-14 grid gap-8 lg:grid-cols-2">
               <motion.div
-                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] backdrop-blur"
+                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] backdrop-blur h-full"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeIn}
               >
                 <AnimatedAbout content={aboutContent} />
-                <div className="mt-10 space-y-4">
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
-                    <span className="text-[13px] text-slate-400">Software development aligned to clear outcomes.</span>
-                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">
-                      Design x Development
-                    </span>
-                    <span className="text-[13px] text-slate-400">Design support across UI and graphics.</span>
-                  </div>
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    {focusAreas.map((item) => (
-                      <div
-                        key={item.title}
-                        className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
-                      >
-                        <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
-                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </motion.div>
               <motion.div
                 className="space-y-6"
@@ -774,8 +764,28 @@ export default function Home() {
                     Five years of UI and UX storytelling ensures every experience is as intuitive as it is expressive.
                   </p>
                 </div>
+
+                <div className="pt-4">
+                  <div className="mb-4 flex flex-col gap-1 px-1">
+                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
+                    <span className="text-[13px] text-slate-400">Software development aligned to clear outcomes.</span>
+                  </div>
+                  <div className="grid gap-4 grid-cols-1">
+                    {focusAreas.map((item) => (
+                      <div
+                        key={item.title}
+                        className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
+                      >
+                        <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
+                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             </div>
+
+
           </div>
         </section>
 
@@ -926,11 +936,18 @@ export default function Home() {
               {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
-                  className="group rounded-2xl border border-slate-800/60 bg-slate-900/60 p-4 text-center backdrop-blur transition hover:border-blue-500/60 hover:bg-slate-900/80"
+                  className="group rounded-2xl border border-slate-800/60 bg-slate-900/60 p-4 text-center backdrop-blur transition-all duration-300 hover:border-blue-500/60 hover:bg-slate-900/80 hover:shadow-lg hover:shadow-blue-500/20"
                   variants={fadeIn}
-                  whileHover={{ translateY: -4 }}
+                  whileHover={{
+                    translateY: -8,
+                    scale: 1.05,
+                    rotateY: 5,
+                    rotateX: 5,
+                  }}
+                  style={{ transformStyle: 'preserve-3d' }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/60 transition group-hover:bg-blue-500/10">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/60 transition-all duration-300 group-hover:bg-blue-500/20 group-hover:scale-110">
                     <skill.Icon size={isSmallScreen ? 24 : 32} className={skill.className} />
                   </div>
                   <p className="mt-3 text-sm font-medium text-slate-200">{skill.name}</p>
