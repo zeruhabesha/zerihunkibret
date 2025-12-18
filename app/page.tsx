@@ -97,6 +97,14 @@ export default function Home() {
       link: "https://yegna-biz.vercel.app",
     },
     {
+      id: 87,
+      title: "GymLyfco",
+      description: "Shopify storefront with customized theme, apps, and product experience for an activewear brand.",
+      technologies: ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
+      image: "/images/gymlyfco.svg",
+      link: "https://gymlyfco.myshopify.com/",
+    },
+    {
       id: 8,
       title: "Ethio Tech Addis",
       description: "Technology services platform for the Ethiopian market.",
@@ -1081,4 +1089,3 @@ export default function Home() {
     </div>
   )
 }
-

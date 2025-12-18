@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="title desc">
+  <title id="title">GymLyfco Shopify Store</title>
+  <desc id="desc">Stylized cover image for the GymLyfco Shopify storefront</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e3a8a" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+    <linearGradient id="pill" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)" rx="24" />
+  <circle cx="640" cy="120" r="120" fill="#ffffff0f" />
+  <circle cx="160" cy="420" r="180" fill="#0ea5e920" />
+  <rect x="70" y="120" width="660" height="300" rx="28" fill="#0b1224" stroke="#38bdf8" stroke-opacity="0.4" />
+  <rect x="110" y="190" width="200" height="180" rx="18" fill="#111827" stroke="#38bdf8" stroke-opacity="0.3" />
+  <rect x="340" y="190" width="200" height="110" rx="18" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.3" />
+  <rect x="570" y="190" width="120" height="70" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.3" />
+  <rect x="340" y="320" width="350" height="50" rx="16" fill="#0f172a" stroke="#38bdf8" stroke-opacity="0.2" />
+  <text x="130" y="240" fill="#e0f2fe" font-family="'Inter', system-ui" font-size="40" font-weight="700">GymLyfco</text>
+  <text x="130" y="280" fill="#94a3b8" font-family="'Inter', system-ui" font-size="18">Shopify-powered activewear commerce experience</text>
+  <g fill="#38bdf8" font-family="'Inter', system-ui" font-size="14" font-weight="600">
+    <text x="360" y="230">Custom theme</text>
+    <text x="360" y="260">App integrations</text>
+    <text x="360" y="290">Responsive layout</text>
+  </g>
+  <rect x="360" y="332" width="110" height="24" rx="12" fill="url(#pill)" opacity="0.9" />
+  <text x="415" y="350" text-anchor="middle" fill="#0b1120" font-family="'Inter', system-ui" font-size="13" font-weight="700">Shopify</text>
+  <rect x="510" y="332" width="120" height="24" rx="12" fill="#22d3ee33" stroke="#22d3ee" />
+  <text x="570" y="350" text-anchor="middle" fill="#e0f2fe" font-family="'Inter', system-ui" font-size="13" font-weight="700">Full stack</text>
+</svg>
