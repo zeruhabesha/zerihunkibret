@@ -21,6 +21,9 @@ interface TabsProps {
 
 export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects }: TabsProps) {
   const [activeTab, setActiveTab] = useState("fullstack")
+  const [currentPage, setCurrentPage] = useState(1)
+  const [selectedTech, setSelectedTech] = useState("All")
+  const itemsPerPage = 9
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -28,15 +31,15 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
   }
 
   const tabVariants = {
-    inactive: { 
-      scale: 0.95, 
+    inactive: {
+      scale: 0.95,
       opacity: 0.7,
-      transition: { duration: 0.3 } 
+      transition: { duration: 0.3 }
     },
-    active: { 
-      scale: 1, 
+    active: {
+      scale: 1,
       opacity: 1,
-      transition: { duration: 0.3 } 
+      transition: { duration: 0.3 }
     }
   }
 
@@ -46,6 +49,56 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
     graphics: { x: "200%" }
   }
 
+  // Get current list based on activeTab
+  const currentList = activeTab === "fullstack" ? fullStackProjects :
+    activeTab === "uiux" ? uiuxProjects : graphicsProjects
+
+  // Filter categories based on active tab
+  const filterMap: Record<string, { label: string; value: string }[]> = {
+    fullstack: [
+      { label: "All", value: "All" },
+      { label: "Next.js", value: "next" },
+      { label: "React", value: "react" },
+      { label: "WordPress", value: "wordpress" },
+      { label: "Shopify", value: "shopify" },
+      { label: "E-Commerce", value: "commerce" },
+      { label: "PHP", value: "php" },
+    ],
+    uiux: [
+      { label: "All", value: "All" },
+      { label: "Figma", value: "figma" },
+      { label: "Adobe XD", value: "xd" },
+    ],
+    graphics: [
+      { label: "All", value: "All" },
+      { label: "Photoshop", value: "photoshop" },
+      { label: "Illustrator", value: "illustrator" },
+      { label: "Canva", value: "canva" },
+    ],
+  }
+
+  const filterCategories = filterMap[activeTab] || filterMap.fullstack
+
+  // Filter logic with case-insensitive partial matching
+  const filteredList = selectedTech === "All"
+    ? currentList
+    : currentList.filter(p => p.technologies.some(t => t.toLowerCase().includes(selectedTech.toLowerCase())))
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredList.length / itemsPerPage)
+  const paginatedList = filteredList.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab)
+    setCurrentPage(1)
+    setSelectedTech("All")
+  }
+
+  const handleTechChange = (techValue: string) => {
+    setSelectedTech(techValue)
+    setCurrentPage(1)
+  }
+
   return (
     <div className="w-full">
       {/* Tab Navigation */}
@@ -53,17 +106,17 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
         <div className="flex justify-center mb-2">
           <div className="bg-gray-800 p-1 md:p-2 rounded-xl flex relative shadow-xl shadow-blue-500/10 w-full max-w-md md:max-w-none">
             {/* Active Tab Indicator */}
-            <motion.div 
+            <motion.div
               className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl z-0"
               variants={indicatorVariants}
               animate={activeTab}
               initial={false}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             />
-            
+
             {/* Tab Buttons */}
             <motion.button
-              onClick={() => setActiveTab("fullstack")}
+              onClick={() => handleTabChange("fullstack")}
               className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "fullstack" ? "active" : "inactive"}
@@ -75,9 +128,9 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
                 Full Stack
               </span>
             </motion.button>
-            
+
             <motion.button
-              onClick={() => setActiveTab("uiux")}
+              onClick={() => handleTabChange("uiux")}
               className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "uiux" ? "active" : "inactive"}
@@ -89,9 +142,9 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
                 UI/UX Design
               </span>
             </motion.button>
-            
+
             <motion.button
-              onClick={() => setActiveTab("graphics")}
+              onClick={() => handleTabChange("graphics")}
               className={`relative z-10 px-2 sm:px-4 md:px-8 py-2 md:py-4 text-xs sm:text-sm md:text-lg font-medium rounded-lg transition-all duration-300 flex-1 text-center`}
               variants={tabVariants}
               animate={activeTab === "graphics" ? "active" : "inactive"}
@@ -105,10 +158,10 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             </motion.button>
           </div>
         </div>
-        
+
         {/* Tab Icons */}
         <div className="flex justify-center space-x-8 md:space-x-16 mt-4">
-          <motion.div 
+          <motion.div
             className={`flex flex-col items-center ${activeTab === "fullstack" ? "text-blue-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "fullstack" ? -5 : 0 }}
           >
@@ -119,8 +172,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             </div>
             <span className="text-xs font-medium hidden sm:block">{fullStackProjects.length} Projects</span>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className={`flex flex-col items-center ${activeTab === "uiux" ? "text-blue-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "uiux" ? -5 : 0 }}
           >
@@ -131,8 +184,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             </div>
             <span className="text-xs font-medium hidden sm:block">{uiuxProjects.length} Designs</span>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             className={`flex flex-col items-center ${activeTab === "graphics" ? "text-red-400" : "text-gray-500"}`}
             animate={{ y: activeTab === "graphics" ? -5 : 0 }}
           >
@@ -146,51 +199,101 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
         </div>
       </div>
 
+      {/* Filter Chips */}
+      <div className="mb-8 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex space-x-2 md:justify-center min-w-max px-4">
+          {filterCategories.map((category) => (
+            <button
+              key={category.label}
+              onClick={() => handleTechChange(category.value)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${selectedTech === category.value
+                ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
+                : "bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-700/50"
+                }`}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Tab Content */}
-      <div className="tab-content">
-        {activeTab === "fullstack" && (
+      <div className="tab-content relative min-h-[400px]">
+        {paginatedList.length > 0 ? (
           <motion.div
-            key="fullstack"
+            key={`${activeTab}-${selectedTech}-${currentPage}`}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
           >
-            {fullStackProjects.map((project) => (
+            {paginatedList.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </motion.div>
-        )}
-
-        {activeTab === "uiux" && (
-          <motion.div
-            key="uiux"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
-          >
-            {uiuxProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </motion.div>
-        )}
-
-        {activeTab === "graphics" && (
-          <motion.div
-            key="graphics"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 px-4 md:px-0"
-          >
-            {graphicsProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </motion.div>
+        ) : (
+          <div className="flex flex-col items-center justify-center py-20 text-slate-500">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p className="text-lg">No projects found with {filterCategories.find(c => c.value === selectedTech)?.label || selectedTech}</p>
+            <button
+              onClick={() => handleTechChange("All")}
+              className="mt-4 px-6 py-2 bg-slate-800 rounded-full text-sm hover:bg-slate-700 transition"
+            >
+              Clear Filter
+            </button>
+          </div>
         )}
       </div>
+
+      {/* Pagination Controls */}
+      {totalPages > 1 && (
+        <div className="mt-12 flex justify-center items-center space-x-4">
+          <button
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all ${currentPage === 1
+              ? "bg-slate-900/50 text-slate-600 cursor-not-allowed"
+              : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              }`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+          </button>
+
+          <div className="flex items-center space-x-2">
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-8 h-8 rounded-full text-sm font-medium transition-all ${currentPage === page
+                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25 scale-110"
+                  : "bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+                  }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+            className={`flex items-center justify-center w-10 h-10 rounded-full transition-all ${currentPage === totalPages
+              ? "bg-slate-900/50 text-slate-600 cursor-not-allowed"
+              : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              }`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      )}
     </div>
   )
 }
- 
+
+

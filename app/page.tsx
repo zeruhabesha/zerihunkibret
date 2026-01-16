@@ -71,6 +71,7 @@ export default function Home() {
 
   // Updated project arrays with real projects (ensure UNIQUE IDs)
   const softwareProjects = [
+
     {
       id: 42,
       title: "NAHORagri PLC",
@@ -95,6 +96,14 @@ export default function Home() {
       technologies: ["Next", "Postgress-SQL", "Typescripts", "NodeJS", "ExpressJS", "Responsive Design"],
       image: "/images/yegna.png",
       link: "https://yegna-biz.vercel.app",
+    },
+    {
+      id: 1001,
+      title: "Ethio Core Property",
+      description: "Premium real estate in Ethiopia. Caring for what you own with integrity and excellence.",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Responsive Design"],
+      image: "/images/ethioproperties.png",
+      link: "https://ethioproperties.vercel.app/",
     },
     {
       id: 87,
@@ -169,6 +178,31 @@ export default function Home() {
       ],
       image: "/images/music.png",
       link: "https://addis-music-lemon.vercel.app/",
+    },
+
+    {
+      id: 1002,
+      title: "Olanilux",
+      description: "Online store showcasing premium products and collections.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/olanilux.png",
+      link: "https://olanilux.myshopify.com/",
+    },
+    {
+      id: 1003,
+      title: "Gotoplife",
+      description: "E-commerce platform for lifestyle and wellness products.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/gotoplife.png",
+      link: "https://gotoplife.myshopify.com/",
+    },
+    {
+      id: 1004,
+      title: "Melat Dereje Portfolio",
+      description: "Portfolio website for an Architect & UI Designer crafting beautiful physical and digital spaces.",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      image: "/images/melat.png",
+      link: "https://melatdereje.vercel.app/",
     },
     {
       id: 9,
@@ -742,9 +776,9 @@ export default function Home() {
                 businesses forward.
               </p>
             </motion.div>
-            <div className="mt-14 grid gap-8 lg:grid-cols-2">
+            <div className="mt-14 grid gap-16 lg:grid-cols-[2.5fr_1.2fr] items-start">
               <motion.div
-                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] backdrop-blur h-full"
+                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] backdrop-blur h-full"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -753,7 +787,7 @@ export default function Home() {
                 <AnimatedAbout content={aboutContent} />
               </motion.div>
               <motion.div
-                className="space-y-6"
+                className="space-y-8 sticky top-32 h-fit"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
