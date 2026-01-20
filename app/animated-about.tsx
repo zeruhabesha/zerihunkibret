@@ -33,7 +33,7 @@ export default function AnimatedAbout({ content }: AnimatedAboutProps) {
 
       {/* Main content container */}
       <motion.div
-        className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 shadow-2xl border border-gray-700 relative z-10"
+        className="bg-gradient-to-br from-white to-blue-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 shadow-2xl border border-blue-100 dark:border-gray-700 relative z-10"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -53,14 +53,14 @@ export default function AnimatedAbout({ content }: AnimatedAboutProps) {
             content.paragraphs.map((paragraph, index) => (
               <motion.p
                 key={index}
-                className="text-lg text-gray-300 leading-relaxed mb-6 last:mb-0"
+                className="text-lg text-blue-900 dark:text-gray-300 leading-relaxed mb-6 last:mb-0"
                 variants={itemVariants}
               >
                 {paragraph}
               </motion.p>
             ))
           ) : (
-            <p className="text-lg text-gray-300 leading-relaxed">No content available.</p>
+            <p className="text-lg text-blue-900 dark:text-gray-300 leading-relaxed">No content available.</p>
           )}
         </motion.div>
       </motion.div>

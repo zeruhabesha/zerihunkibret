@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { FaBars, FaTimes } from "react-icons/fa"
+import { ThemeToggle } from "./ThemeToggle"
 
 interface NavLink {
     name: string
@@ -95,8 +96,8 @@ const Nav = () => {
     return (
         <motion.nav
             className={`fixed w-full z-50 transition-all duration-300 ${scrolled
-                    ? "bg-slate-900/95 backdrop-blur-md py-2 sm:py-3 shadow-lg shadow-blue-500/10"
-                    : "bg-transparent py-3 sm:py-5"
+                ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md py-2 sm:py-3 shadow-lg shadow-blue-200/50 dark:shadow-blue-500/10"
+                : "bg-transparent py-3 sm:py-5"
                 }`}
             initial="hidden"
             animate="visible"
@@ -105,7 +106,7 @@ const Nav = () => {
             <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
                 <Link href="/">
                     <motion.div
-                        className="text-xl sm:text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600"
+                        className="text-xl sm:text-2xl font-bold cursor-pointer bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-blue-600"
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300 }}
                     >
@@ -128,13 +129,15 @@ const Nav = () => {
                                     handleSmoothScroll(e, link.href)
                                     setActiveLink(link.id)
                                 }}
-                                className={`relative ${activeLink === link.id ? "text-white font-semibold" : "text-slate-300"
-                                    } hover:text-white transition-colors cursor-pointer text-sm xl:text-base`}
+                                className={`relative ${activeLink === link.id
+                                    ? "text-blue-600 dark:text-white font-semibold"
+                                    : "text-blue-800 dark:text-slate-300"
+                                    } hover:text-blue-600 dark:hover:text-white transition-colors cursor-pointer text-sm xl:text-base`}
                             >
                                 {link.name}
                                 {activeLink === link.id && (
                                     <motion.div
-                                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600"
+                                        className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-blue-600"
                                         layoutId="activeLink"
                                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                                     />
@@ -142,23 +145,27 @@ const Nav = () => {
                             </a>
                         </motion.div>
                     ))}
-                    <Link href="/resume">
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            transition={{ type: "spring", stiffness: 300 }}
-                            className="px-4 xl:px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 text-sm xl:text-base shadow-lg shadow-blue-500/30"
-                        >
-                            Resume
-                        </motion.button>
-                    </Link>
+                    <div className="flex items-center gap-4">
+                        <ThemeToggle />
+                        <Link href="/resume">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className="px-4 xl:px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 rounded-full text-white hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-600 dark:hover:to-blue-700 transition-all duration-300 text-sm xl:text-base shadow-lg shadow-blue-500/30"
+                            >
+                                Resume
+                            </motion.button>
+                        </Link>
+                    </div>
                 </div>
 
                 {/* Mobile Menu Button */}
-                <div className="lg:hidden">
+                <div className="lg:hidden flex items-center gap-4">
+                    <ThemeToggle />
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="text-white focus:outline-none menu-button"
+                        className="text-blue-900 dark:text-white focus:outline-none menu-button"
                         aria-label="Toggle menu"
                     >
                         {isOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
@@ -168,7 +175,7 @@ const Nav = () => {
 
             {/* Mobile Menu */}
             <motion.div
-                className="fixed top-0 right-0 h-screen w-64 bg-slate-900/95 backdrop-blur-md shadow-lg lg:hidden z-50 pt-16 sm:pt-20 px-4 mobile-menu"
+                className="fixed top-0 right-0 h-screen w-64 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg lg:hidden z-50 pt-16 sm:pt-20 px-4 mobile-menu"
                 initial="closed"
                 animate={isOpen ? "open" : "closed"}
                 variants={mobileMenuVariants}
@@ -183,15 +190,17 @@ const Nav = () => {
                                 setIsOpen(false)
                                 setActiveLink(link.id)
                             }}
-                            className={`${activeLink === link.id ? "text-white font-semibold" : "text-slate-300"
-                                } hover:text-white transition-colors text-base sm:text-lg block py-2`}
+                            className={`${activeLink === link.id
+                                ? "text-blue-600 dark:text-white font-semibold"
+                                : "text-blue-800 dark:text-slate-300"
+                                } hover:text-blue-600 dark:hover:text-white transition-colors text-base sm:text-lg block py-2`}
                         >
                             {link.name}
                         </a>
                     ))}
                     <Link href="/resume">
                         <button
-                            className="w-full px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full hover:from-blue-600 hover:to-blue-700 transition-all duration-300 mt-4 shadow-lg shadow-blue-500/30"
+                            className="w-full px-5 py-2 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-500 dark:to-blue-600 rounded-full text-white hover:from-blue-700 hover:to-blue-800 dark:hover:from-blue-600 dark:hover:to-blue-700 transition-all duration-300 mt-4 shadow-lg shadow-blue-500/30"
                             onClick={() => setIsOpen(false)}
                         >
                             Resume

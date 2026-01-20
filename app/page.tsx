@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import dynamic from "next/dynamic"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
+import ContactForm from "../components/ContactForm"
 import {
   FaArrowRight,
   FaGithub,
@@ -427,13 +428,13 @@ export default function Home() {
     className?: string
   }[] = [
       { name: "React", Icon: SiReact, className: "text-blue-500" },
-      { name: "Node.js", Icon: SiNodedotjs, className: "text-green-600" },
-      { name: "Next.js", Icon: SiNextdotjs, className: "text-black" },
-      { name: "MongoDB", Icon: SiMongodb, className: "text-green-500" },
-      { name: "Express", Icon: SiExpress, className: "text-gray-700" },
+      { name: "Node.js", Icon: SiNodedotjs, className: "text-blue-600" },
+      { name: "Next.js", Icon: SiNextdotjs, className: "text-blue-900" },
+      { name: "MongoDB", Icon: SiMongodb, className: "text-blue-500" },
+      { name: "Express", Icon: SiExpress, className: "text-blue-700" },
       { name: "PHP", Icon: SiPhp, className: "text-blue-600" },
       { name: "MySQL", Icon: SiMysql, className: "text-blue-800" },
-      { name: "Laravel", Icon: SiLaravel, className: "text-red-600" },
+      { name: "Laravel", Icon: SiLaravel, className: "text-blue-600" },
       { name: "Flutter", Icon: SiFlutter, className: "text-blue-400" },
       { name: "Material UI", Icon: SiMui, className: "text-blue-600" },
       { name: "CoreUI", Icon: () => <span className="text-blue-500 font-bold text-xl">CoreUI</span> },
@@ -442,11 +443,11 @@ export default function Home() {
       { name: "Figma", Icon: SiFigma, className: "text-blue-500" },
       { name: "TypeScript", Icon: SiTypescript, className: "text-blue-600" },
       { name: "OpenSearch", Icon: SiOpensearch, className: "text-blue-500" },
-      { name: "Shopify", Icon: SiShopify, className: "text-green-600" },
+      { name: "Shopify", Icon: SiShopify, className: "text-blue-600" },
       { name: "Photoshop", Icon: SiAdobephotoshop, className: "text-blue-900" },
-      { name: "Illustrator", Icon: SiAdobeillustrator, className: "text-orange-600" },
+      { name: "Illustrator", Icon: SiAdobeillustrator, className: "text-blue-600" },
       { name: "Canva", Icon: SiCanva, className: "text-blue-500" },
-      { name: "CapCut", Icon: () => <span className="text-black font-bold text-xl">CapCut</span> },
+      { name: "CapCut", Icon: () => <span className="text-blue-900 font-bold text-xl">CapCut</span> },
     ]
 
   const fadeIn = {
@@ -621,32 +622,28 @@ export default function Home() {
   ]
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-100">
+    <div className="relative min-h-screen overflow-hidden">
       <ScrollProgress />
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(8,145,178,0.15),_transparent_58%)]" />
-      </div>
       <Nav />
 
       <main className="relative z-10">
         <section id="home" className="relative isolate overflow-hidden">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-blue-500/15 blur-3xl" />
+            <div className="absolute left-1/2 top-0 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl dark:bg-blue-500/15" />
           </div>
-          <div className="mx-auto flex max-w-6xl flex-col-reverse gap-12 px-6 pb-24 pt-28 lg:flex-row lg:items-center">
+          <div className="mx-auto flex max-w-7xl flex-col-reverse gap-12 px-2 pb-24 pt-28 lg:flex-row lg:items-center">
             <motion.div
               className="flex-1 space-y-6"
               initial={{ opacity: 0, y: 24 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/70 px-4 py-2 text-xs uppercase tracking-[0.35em] text-slate-300">
-                <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-slate-700/60 bg-white dark:bg-slate-900/70 px-4 py-2 text-xs uppercase tracking-[0.35em] text-blue-800 dark:text-slate-300 shadow-sm dark:shadow-none">
+                <span className="h-2 w-2 rounded-full bg-blue-500 dark:bg-emerald-400"></span>
                 Available for collaboration
               </span>
-              <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl">Zerihun Kibret</h1>
-              <div className="text-xl font-medium text-blue-300 sm:text-2xl">
+              <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl text-blue-900 dark:text-white">Zerihun Kibret</h1>
+              <div className="text-xl font-medium text-blue-600 dark:text-blue-300 sm:text-2xl">
                 <Typewriter
                   options={{
                     strings: ["Full-Stack Developer", "UI/UX Designer", "Graphics Designer"],
@@ -658,21 +655,21 @@ export default function Home() {
                   }}
                 />
               </div>
-              <p className="max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+              <p className="max-w-2xl text-base leading-relaxed text-blue-800 dark:text-slate-300 sm:text-lg">
                 I build human-centered platforms that blend solid engineering with polished design systems. From complex
                 property and tender solutions to medical platforms, I turn business goals into products people love to use.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="/resume"
-                  className="group inline-flex items-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-600"
+                  className="group inline-flex items-center gap-2 rounded-full bg-blue-600 dark:bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-700 dark:hover:bg-blue-600 hover:shadow-blue-600/40"
                 >
                   View resume
                   <FaArrowRight className="transition group-hover:translate-x-1" />
                 </a>
                 <a
                   href="#projects"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 transition hover:border-blue-500/70 hover:text-blue-300"
+                  className="inline-flex items-center gap-2 rounded-full border border-blue-300 dark:border-slate-700 px-6 py-3 text-sm font-semibold text-blue-800 dark:text-slate-100 transition hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-300 hover:bg-blue-50 dark:hover:bg-transparent shadow-sm dark:shadow-none bg-white dark:bg-transparent"
                 >
                   Browse recent work
                 </a>
@@ -681,18 +678,18 @@ export default function Home() {
                 {heroStats.map((stat) => (
                   <motion.div
                     key={stat.label}
-                    className="rounded-2xl border border-slate-800/60 bg-slate-900/60 p-4 shadow-[0_25px_60px_-35px_rgba(59,130,246,0.55)] backdrop-blur"
+                    className="rounded-2xl border border-blue-100 dark:border-slate-800/60 bg-white dark:bg-slate-900/60 p-4 shadow-lg dark:shadow-[0_25px_60px_-35px_rgba(59,130,246,0.55)] backdrop-blur"
                     whileHover={{ translateY: -4 }}
                     transition={{ type: "spring", stiffness: 200, damping: 22 }}
                   >
-                    <p className="text-2xl font-semibold text-blue-400 sm:text-3xl">{stat.value}</p>
-                    <p className="mt-2 text-sm font-medium text-slate-200">{stat.label}</p>
-                    <p className="mt-1 text-xs text-slate-400">{stat.description}</p>
+                    <p className="text-2xl font-semibold text-blue-600 dark:text-blue-400 sm:text-3xl">{stat.value}</p>
+                    <p className="mt-2 text-sm font-medium text-blue-900 dark:text-slate-200">{stat.label}</p>
+                    <p className="mt-1 text-xs text-blue-700 dark:text-slate-400">{stat.description}</p>
                   </motion.div>
                 ))}
               </div>
               <div className="flex flex-wrap items-center gap-4 pt-6">
-                <span className="text-[11px] uppercase tracking-[0.4em] text-slate-500">Connect with me</span>
+                <span className="text-[11px] uppercase tracking-[0.4em] text-blue-600">Connect with me</span>
                 <div className="flex flex-wrap gap-3">
                   {socialProfiles.map((profile) => (
                     <a
@@ -700,7 +697,7 @@ export default function Home() {
                       href={profile.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/60 bg-slate-900/60 text-slate-300 transition hover:border-blue-500 hover:text-blue-400"
+                      className="group flex h-11 w-11 items-center justify-center rounded-full border border-blue-300 dark:border-slate-700/60 bg-blue-600 dark:bg-slate-900/60 text-white dark:text-slate-300 transition hover:border-blue-500 hover:bg-blue-700 dark:hover:text-blue-400"
                     >
                       <profile.Icon size={20} />
                       <span className="sr-only">{profile.label}</span>
@@ -736,24 +733,24 @@ export default function Home() {
                   )}
                 </div>
                 <motion.div
-                  className="absolute -left-12 bottom-16 hidden w-48 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-4 shadow-2xl backdrop-blur md:block"
+                  className="absolute -left-12 bottom-16 hidden w-48 rounded-2xl border border-blue-200 dark:border-slate-800/80 bg-white dark:bg-slate-950/80 p-4 shadow-2xl backdrop-blur md:block"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ delay: 0.6, duration: 0.6 }}
                 >
-                  <p className="text-[11px] uppercase tracking-[0.3em] text-slate-500">Focus</p>
-                  <p className="mt-2 text-sm font-semibold text-slate-100">Product experiences</p>
-                  <p className="mt-1 text-xs text-slate-400">MERN / Next.js / UI Systems</p>
+                  <p className="text-[11px] uppercase tracking-[0.3em] text-blue-600 dark:text-slate-500">Focus</p>
+                  <p className="mt-2 text-sm font-semibold text-blue-900 dark:text-slate-100">Product experiences</p>
+                  <p className="mt-1 text-xs text-blue-700 dark:text-slate-400">MERN / Next.js / UI Systems</p>
                 </motion.div>
                 <motion.div
-                  className="absolute -right-10 top-10 hidden w-44 rounded-2xl border border-emerald-500/40 bg-emerald-500/10 p-3 text-emerald-200 shadow-2xl backdrop-blur md:block"
+                  className="absolute -right-10 top-10 hidden w-44 rounded-2xl border border-blue-300 dark:border-emerald-500/40 bg-blue-100 dark:bg-emerald-500/10 p-3 text-blue-900 dark:text-emerald-200 shadow-2xl backdrop-blur md:block"
                   initial={{ opacity: 0, y: -20 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
                   transition={{ delay: 0.8, duration: 0.6 }}
                 >
                   <p className="text-[11px] uppercase tracking-[0.3em]">Impact</p>
                   <p className="mt-1 text-sm font-semibold">40% efficiency gains</p>
-                  <p className="text-xs text-emerald-100/80">from delivering the medical practice platform</p>
+                  <p className="text-xs text-blue-700 dark:text-emerald-100/80">from delivering the medical practice platform</p>
                 </motion.div>
               </motion.div>
             </ParallaxSection>
@@ -761,7 +758,7 @@ export default function Home() {
         </section>
 
         <section id="about" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-7xl px-2">
             <motion.div
               className="mx-auto max-w-3xl text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -778,7 +775,7 @@ export default function Home() {
             </motion.div>
             <div className="mt-14 grid gap-16 lg:grid-cols-[2.5fr_1.2fr] items-start">
               <motion.div
-                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] backdrop-blur h-full"
+                className="rounded-3xl border border-blue-100 dark:border-slate-800/60 bg-blue-50 dark:bg-slate-900/60 p-8 shadow-xl dark:shadow-[0_30px_70px_-40px_rgba(59,130,246,0.65)] hover:shadow-2xl transition-shadow duration-300 backdrop-blur h-full text-blue-900 dark:text-slate-300 font-medium"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -793,33 +790,27 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <div className="rounded-3xl border border-blue-500/40 bg-blue-500/10 p-6 text-blue-100 backdrop-blur">
-                  <h3 className="text-lg font-semibold">Multi-disciplinary thinker</h3>
-                  <p className="mt-3 text-sm text-blue-100/80">
-                    Proven track record leading property management, tender automation, and healthcare platforms from
-                    architecture to launch.
-                  </p>
-                </div>
-                <div className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-6 text-slate-200 backdrop-blur">
-                  <h3 className="text-lg font-semibold">Design x Development</h3>
-                  <p className="mt-3 text-sm text-slate-400">
-                    Five years of UI and UX storytelling ensures every experience is as intuitive as it is expressive.
-                  </p>
-                </div>
-
-                <div className="pt-4">
-                  <div className="mb-4 flex flex-col gap-1 px-1">
-                    <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">My services</span>
-                    <span className="text-[13px] text-slate-400">Software development aligned to clear outcomes.</span>
+                {[
+                  { title: "Multi-disciplinary thinker", text: "Proven track record leading property management, tender automation, and healthcare platforms from architecture to launch." },
+                  { title: "Design x Development", text: "Five years of UI and UX storytelling ensures every experience is as intuitive as it is expressive." }
+                ].map((item, index) => (
+                  <div key={index} className="rounded-2xl border border-blue-100 dark:border-slate-800/60 bg-white dark:bg-slate-900/40 p-6 backdrop-blur shadow-md dark:shadow-none hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                    <h3 className="font-bold text-blue-900 dark:text-white mb-2">{item.title}</h3>
+                    <p className="text-sm leading-relaxed text-blue-700 dark:text-slate-400">{item.text}</p>
                   </div>
-                  <div className="grid gap-4 grid-cols-1">
-                    {focusAreas.map((item) => (
-                      <div
-                        key={item.title}
-                        className="rounded-2xl border border-slate-800/60 bg-slate-950/50 p-5 transition hover:border-blue-500/60 hover:bg-slate-900/70"
-                      >
-                        <h3 className="text-lg font-semibold text-slate-100">{item.title}</h3>
-                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
+                ))}
+
+                <div className="pt-6">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-4">My Services</h3>
+                  <div className="space-y-4">
+                    {[
+                      { title: "Software", desc: "Full-stack builds that blend scalable architecture, testing, and deployment so releases stay reliable." },
+                      { title: "UI Design", desc: "Interface systems crafted with UX strategy so every flow communicates clearly and looks on-brand." },
+                      { title: "Graphics", desc: "Supportive visuals and marketing graphics that extend the product story across touchpoints." }
+                    ].map((service, i) => (
+                      <div key={i} className="group rounded-xl border border-blue-100 dark:border-slate-800/60 bg-white dark:bg-slate-900/20 p-4 transition shadow-sm hover:shadow-md hover:border-blue-500/30 hover:bg-blue-50 dark:hover:bg-blue-500/5">
+                        <h4 className="font-bold text-blue-900 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">{service.title}</h4>
+                        <p className="mt-1 text-xs text-blue-700 dark:text-slate-500">{service.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -832,7 +823,7 @@ export default function Home() {
         </section>
 
         <section id="services" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-7xl px-2">
             <motion.div
               className="mx-auto max-w-3xl text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -840,9 +831,9 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">Services</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-600 dark:text-blue-300/80">Services</span>
               <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Services to design, build, and brand</h2>
-              <p className="mt-4 text-base text-slate-300 sm:text-lg">
+              <p className="mt-4 text-base text-blue-700 dark:text-slate-300 sm:text-lg">
                 End-to-end support across software development, UI design, and graphics—delivered with the same polished, modern
                 experience.
               </p>
@@ -852,7 +843,7 @@ export default function Home() {
               {servicePackages.map((pkg, index) => (
                 <motion.div
                   key={pkg.title}
-                  className={`relative overflow-hidden rounded-3xl border border-slate-800/70 bg-gradient-to-br ${pkg.accent} p-6 shadow-[0_35px_80px_-50px_rgba(59,130,246,0.65)] backdrop-blur`}
+                  className={`relative overflow-hidden rounded-3xl border border-blue-200 dark:border-slate-800/70 bg-white dark:bg-slate-950 dark:bg-gradient-to-br ${pkg.accent} p-6 shadow-lg dark:shadow-[0_35px_80px_-50px_rgba(59,130,246,0.65)] backdrop-blur`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -861,27 +852,27 @@ export default function Home() {
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">{pkg.timeline}</p>
-                      <h3 className="mt-2 text-xl font-semibold text-slate-50">{pkg.title}</h3>
+                      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-600 dark:text-slate-400">{pkg.timeline}</p>
+                      <h3 className="mt-2 text-xl font-semibold text-blue-900 dark:text-slate-50">{pkg.title}</h3>
                     </div>
-                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-700/60 bg-slate-900/70 text-blue-200">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-200 dark:border-slate-700/60 bg-blue-50 dark:bg-slate-900/70 text-blue-600 dark:text-blue-200">
                       <pkg.Icon size={18} />
                     </div>
                   </div>
-                  <p className="mt-3 text-sm text-slate-300">{pkg.focus}</p>
-                  <div className="mt-4 space-y-3 rounded-2xl border border-slate-800/60 bg-slate-950/50 p-4">
+                  <p className="mt-3 text-sm text-blue-800 dark:text-slate-300">{pkg.focus}</p>
+                  <div className="mt-4 space-y-3 rounded-2xl border border-blue-100 dark:border-slate-800/60 bg-blue-50 dark:bg-slate-950/50 p-4">
                     {pkg.deliverables.map((item) => (
                       <div key={item} className="flex items-start gap-3">
                         <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-blue-400" />
-                        <p className="text-sm text-slate-200">{item}</p>
+                        <p className="text-sm text-blue-900 dark:text-slate-200">{item}</p>
                       </div>
                     ))}
                   </div>
-                  <div className="mt-5 flex items-center justify-between text-xs text-slate-400">
+                  <div className="mt-5 flex items-center justify-between text-xs text-blue-700 dark:text-slate-400">
                     <span className="rounded-full border border-blue-400/40 bg-blue-500/10 px-3 py-1 font-semibold uppercase tracking-[0.25em] text-blue-100">
                       Delivery ready
                     </span>
-                    <span className="text-slate-400">Includes retros & handoff</span>
+                    <span className="text-blue-600 dark:text-slate-400">Includes retros & handoff</span>
                   </div>
                 </motion.div>
               ))}
@@ -890,71 +881,72 @@ export default function Home() {
         </section>
 
         <section id="journey" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
-              <motion.div
-                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 backdrop-blur"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl font-semibold text-slate-100">Learning Journey</h2>
-                <p className="mt-3 text-sm text-slate-400">
-                  A foundation of computer science and continuous certifications keeps my craft grounded and evolving.
-                </p>
-                <div className="mt-10 space-y-6">
-                  {learningTimeline.map((item, index) => (
-                    <div key={item.title} className="relative pl-12">
-                      <div className="absolute left-0 top-1 flex flex-col items-center">
-                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-blue-500/60 bg-slate-950">
-                          <item.Icon className="text-blue-400" size={16} />
-                        </div>
-                        {index !== learningTimeline.length - 1 && (
-                          <span className="mt-1 block h-full w-px bg-slate-700/60" />
-                        )}
-                      </div>
-                      <div className="rounded-2xl border border-slate-800/60 bg-slate-950/60 p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-blue-300/80">{item.period}</p>
-                        <h3 className="mt-2 text-lg font-semibold text-slate-100">{item.title}</h3>
-                        <p className="mt-2 text-sm text-slate-400">{item.description}</p>
-                      </div>
+          <div className="mx-auto max-w-7xl px-2">
+            <div className="mt-16">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl mb-12 text-center">
+                Learning Journey
+              </h2>
+              <div className="grid md:grid-cols-2 gap-12 items-start">
+                <div className="relative border-l-2 border-blue-200 dark:border-slate-800 ml-4 pl-8 space-y-12">
+                  {/* Education Item */}
+                  <div className="relative">
+                    <span className="absolute -left-[41px] top-1 h-6 w-6 rounded-full bg-blue-600 dark:bg-blue-500 ring-4 ring-white dark:ring-slate-900 shadow-md"></span>
+                    <div className="bg-white dark:bg-slate-900/60 p-6 rounded-2xl shadow-lg border border-blue-100 dark:border-slate-800/60 hover:shadow-xl transition-all duration-300 group">
+                      <span className="text-sm font-bold text-blue-600 dark:text-blue-400">2016 - 2020</span>
+                      <h3 className="text-xl font-bold text-blue-900 dark:text-white mt-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">Bachelor's Degree in Computer Science</h3>
+                      <p className="mt-2 text-blue-700 dark:text-slate-400 leading-relaxed">
+                        Completed a comprehensive computer science program with a focus on software engineering, systems design, and algorithms.
+                      </p>
                     </div>
-                  ))}
+                  </div>
+
+                  {/* Certification Item */}
+                  <div className="relative">
+                    <span className="absolute -left-[41px] top-1 h-6 w-6 rounded-full bg-blue-600 dark:bg-blue-500 ring-4 ring-white dark:ring-slate-900 shadow-md"></span>
+                    <div className="bg-white dark:bg-slate-900/60 p-6 rounded-2xl shadow-lg border border-blue-100 dark:border-slate-800/60 hover:shadow-xl transition-all duration-300 group">
+                      <span className="text-sm font-bold text-blue-600 dark:text-blue-400">2023 - 2024</span>
+                      <h3 className="text-xl font-bold text-blue-900 dark:text-white mt-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">CCNA Certification</h3>
+                      <p className="mt-2 text-blue-700 dark:text-slate-400 leading-relaxed">
+                        Cisco Certified Network Associate credential demonstrating networking expertise and infrastructure fundamentals.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </motion.div>
-              <motion.div
-                className="flex flex-col justify-between gap-6"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="rounded-3xl border border-emerald-500/40 bg-emerald-500/10 p-8 text-emerald-100 backdrop-blur">
-                  <h3 className="text-xl font-semibold">Impact Highlights</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-emerald-100/80">
-                    {projectHighlights.map((highlight) => (
-                      <li key={highlight} className="flex items-start gap-3">
-                        <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-300" />
-                        <span>{highlight}</span>
+
+                <div className="space-y-8">
+                  <div className="bg-blue-50 dark:bg-blue-900/10 p-8 rounded-3xl border border-blue-100 dark:border-blue-500/10">
+                    <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-6">Impact Highlights</h3>
+                    <ul className="space-y-4">
+                      <li className="flex gap-4 items-start">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-blue-500 shrink-0 shadow-sm"></span>
+                        <span className="text-blue-800 dark:text-slate-300 leading-relaxed">Scaled a property management platform with end-to-end tenant, maintenance, and finance workflows.</span>
                       </li>
-                    ))}
-                  </ul>
+                      <li className="flex gap-4 items-start">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-blue-500 shrink-0 shadow-sm"></span>
+                        <span className="text-blue-800 dark:text-slate-300 leading-relaxed">Automated tender submissions and evaluations to improve transparency and reduce processing time.</span>
+                      </li>
+                      <li className="flex gap-4 items-start">
+                        <span className="mt-1.5 h-2 w-2 rounded-full bg-blue-500 shrink-0 shadow-sm"></span>
+                        <span className="text-blue-800 dark:text-slate-300 leading-relaxed">Delivered a medical practice suite that increased operational efficiency by 40%.</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white dark:bg-slate-900/60 p-8 rounded-3xl border border-blue-100 dark:border-slate-800/60 shadow-lg">
+                    <h3 className="text-xl font-bold text-blue-900 dark:text-white mb-4">Ways of working</h3>
+                    <p className="text-blue-700 dark:text-slate-400 leading-relaxed">
+                      Comfortable running agile rituals, partnering with designers and stakeholders, and documenting decisions
+                      so teams can scale without friction.
+                    </p>
+                  </div>
                 </div>
-                <div className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 backdrop-blur">
-                  <h3 className="text-xl font-semibold text-slate-100">Ways of working</h3>
-                  <p className="mt-3 text-sm text-slate-400">
-                    Comfortable running agile rituals, partnering with designers and stakeholders, and documenting decisions
-                    so teams can scale without friction.
-                  </p>
-                </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="skills" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
+        <section id="skills" className="relative py-24 bg-blue-50/30 dark:bg-transparent">
+          <div className="mx-auto max-w-7xl px-2">
             <motion.div
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
@@ -962,14 +954,14 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">Capabilities</span>
-              <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Tools I work with every day</h2>
-              <p className="mt-4 text-sm text-slate-400 sm:text-base">
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-600 dark:text-blue-400">Capabilities</span>
+              <h2 className="mt-4 text-3xl font-bold text-blue-900 dark:text-white sm:text-4xl">Tools I work with every day</h2>
+              <p className="mt-4 text-base text-blue-700 dark:text-slate-400 max-w-2xl mx-auto">
                 From design systems to backend services, these are the technologies that help me ship reliable outcomes.
               </p>
             </motion.div>
             <motion.div
-              className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+              className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
@@ -978,21 +970,15 @@ export default function Home() {
               {skills.map((skill) => (
                 <motion.div
                   key={skill.name}
-                  className="group rounded-2xl border border-slate-800/60 bg-slate-900/60 p-4 text-center backdrop-blur transition-all duration-300 hover:border-blue-500/60 hover:bg-slate-900/80 hover:shadow-lg hover:shadow-blue-500/20"
+                  className="group rounded-2xl border border-blue-100 dark:border-slate-800/60 bg-white dark:bg-slate-900/60 p-4 text-center backdrop-blur transition-all duration-300 hover:border-blue-500/60 hover:bg-white dark:hover:bg-slate-900/80 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
                   variants={fadeIn}
-                  whileHover={{
-                    translateY: -8,
-                    scale: 1.05,
-                    rotateY: 5,
-                    rotateX: 5,
-                  }}
-                  style={{ transformStyle: 'preserve-3d' }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-slate-800/60 transition-all duration-300 group-hover:bg-blue-500/20 group-hover:scale-110">
-                    <skill.Icon size={isSmallScreen ? 24 : 32} className={skill.className} />
+                  <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 dark:bg-slate-800 group-hover:scale-110 transition-transform duration-300">
+                    <skill.Icon className="text-blue-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400" size={isSmallScreen ? 20 : 24} />
                   </div>
-                  <p className="mt-3 text-sm font-medium text-slate-200">{skill.name}</p>
+                  <h3 className="text-sm font-semibold text-blue-800 dark:text-slate-200 group-hover:text-blue-900 dark:group-hover:text-white">{skill.name}</h3>
                 </motion.div>
               ))}
             </motion.div>
@@ -1000,7 +986,7 @@ export default function Home() {
         </section>
 
         <section id="projects" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-7xl px-2">
             <motion.div
               className="max-w-3xl"
               initial={{ opacity: 0, y: 20 }}
@@ -1008,13 +994,13 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-300/80">Work</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.35em] text-blue-600 dark:text-blue-300/80">Work</span>
               <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">Selected projects and explorations</h2>
-              <p className="mt-4 text-sm text-slate-400 sm:text-base">
+              <p className="mt-4 text-sm text-blue-700 dark:text-slate-400 sm:text-base">
                 Explore shipped products, UI explorations, and brand storytelling through code and design.
               </p>
             </motion.div>
-            <div className="mt-12 rounded-3xl border border-slate-800/60 bg-slate-900/60 p-6 shadow-[0_35px_80px_-45px_rgba(59,130,246,0.65)] backdrop-blur">
+            <div className="mt-12 rounded-3xl border border-blue-100 dark:border-slate-800/60 bg-white dark:bg-slate-900/60 p-6 shadow-lg dark:shadow-[0_35px_80px_-45px_rgba(59,130,246,0.65)] backdrop-blur">
               <Tabs
                 fullStackProjects={[...softwareProjects, ...moreProjects, ...projectDemos]}
                 uiuxProjects={uiuxProjects}
@@ -1024,99 +1010,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="relative py-24">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
-              <motion.div
-                className="rounded-3xl border border-blue-500/40 bg-blue-500/10 p-8 text-blue-100 backdrop-blur"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-              >
-                <h2 className="text-3xl font-semibold">Let us build something impactful</h2>
-                <p className="mt-4 text-sm text-blue-100/80">
-                  Whether it is launching a new product, refining an experience, or mentoring a team, I am ready to help bring
-                  clarity and momentum.
-                </p>
-                <div className="mt-8 space-y-4">
-                  {contactMethods.map((method) => (
-                    <a
-                      key={method.label}
-                      href={method.href}
-                      target={method.isExternal ? "_blank" : undefined}
-                      rel={method.isExternal ? "noopener noreferrer" : undefined}
-                      className="group flex items-center gap-4 rounded-2xl border border-blue-400/30 bg-blue-500/10 px-4 py-3 transition hover:border-white/60"
-                    >
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-blue-300/40 bg-blue-500/20 text-blue-100">
-                        <method.Icon size={18} />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold uppercase tracking-widest text-blue-100/70">{method.label}</p>
-                        <p className="text-sm text-blue-50">{method.value}</p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </motion.div>
-              <motion.form
-                className="rounded-3xl border border-slate-800/60 bg-slate-900/60 p-8 shadow-xl backdrop-blur"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                onSubmit={(event) => event.preventDefault()}
-              >
-                <h3 className="text-2xl font-semibold text-slate-100">Share your idea</h3>
-                <p className="mt-3 text-sm text-slate-400">
-                  Tell me a little about what you are building and I will respond with next steps within one business day.
-                </p>
-                <div className="mt-8 space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                      Name
-                    </label>
-                    <input
-                      id="name"
-                      type="text"
-                      placeholder="Your name"
-                      className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      placeholder="you@example.com"
-                      className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="project" className="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">
-                      Project details
-                    </label>
-                    <textarea
-                      id="project"
-                      rows={5}
-                      placeholder="Tell me about the challenge you are solving..."
-                      className="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 outline-none transition focus:border-blue-500 focus:bg-slate-900"
-                    />
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  className="group mt-8 inline-flex items-center gap-2 rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 transition hover:bg-blue-600"
-                >
-                  Send message
-                  <FaArrowRight className="transition group-hover:translate-x-1" />
-                </button>
-              </motion.form>
-            </div>
-          </div>
-        </section>
+        <ContactForm />
       </main>
 
       <Footer />

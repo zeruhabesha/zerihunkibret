@@ -15,8 +15,6 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  color: #e2e8f0;
-  background-color: #020617;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -43,7 +41,13 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f2937;
+  background: #d8d8d8;
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #1f2937;
+  }
 }
 
 ::-webkit-scrollbar-thumb {
@@ -57,9 +61,12 @@ body {
 
 /* Optimized animations - use transform and opacity only */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px) translateZ(0);
   }
+
   50% {
     transform: translateY(-10px) translateZ(0);
   }
@@ -72,12 +79,16 @@ body {
 
 /* Blob animation for background elements */
 @keyframes blob {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0px, 0px) scale(1) translateZ(0);
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1) translateZ(0);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9) translateZ(0);
   }
@@ -98,6 +109,7 @@ body {
     opacity: 0;
     transform: translateY(20px) translateZ(0);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) translateZ(0);
@@ -114,6 +126,7 @@ body {
     opacity: 0;
     transform: translateY(30px) translateZ(0);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) translateZ(0);
@@ -134,11 +147,18 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600;
+  }
 }
 
 /* Respect user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -161,4 +181,41 @@ body {
 
 .card-3d:hover {
   transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+/* Interactive background animations */
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }

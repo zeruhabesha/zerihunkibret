@@ -104,10 +104,10 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
       {/* Tab Navigation */}
       <div className="mb-8 md:mb-12 relative px-4 md:px-0">
         <div className="flex justify-center mb-2">
-          <div className="bg-gray-800 p-1 md:p-2 rounded-xl flex relative shadow-xl shadow-blue-500/10 w-full max-w-md md:max-w-none">
+          <div className="bg-blue-50 dark:bg-gray-800 p-1 md:p-2 rounded-xl flex relative shadow-xl shadow-blue-500/5 dark:shadow-blue-500/10 w-full max-w-md md:max-w-none">
             {/* Active Tab Indicator */}
             <motion.div
-              className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl z-0"
+              className="absolute top-0 left-0 w-1/3 h-full bg-blue-600 dark:bg-gradient-to-r dark:from-blue-500 dark:to-blue-600 rounded-xl z-0 shadow-sm dark:shadow-none"
               variants={indicatorVariants}
               animate={activeTab}
               initial={false}
@@ -124,7 +124,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
               aria-selected={activeTab === "fullstack"}
               role="tab"
             >
-              <span className={activeTab === "fullstack" ? "text-white" : "text-gray-300"}>
+              <span className={activeTab === "fullstack" ? "text-white" : "text-blue-800 dark:text-gray-300"}>
                 Full Stack
               </span>
             </motion.button>
@@ -138,7 +138,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
               aria-selected={activeTab === "uiux"}
               role="tab"
             >
-              <span className={activeTab === "uiux" ? "text-white" : "text-gray-300"}>
+              <span className={activeTab === "uiux" ? "text-white" : "text-blue-800 dark:text-gray-300"}>
                 UI/UX Design
               </span>
             </motion.button>
@@ -152,7 +152,7 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
               aria-selected={activeTab === "graphics"}
               role="tab"
             >
-              <span className={activeTab === "graphics" ? "text-white" : "text-gray-300"}>
+              <span className={activeTab === "graphics" ? "text-white" : "text-blue-800 dark:text-gray-300"}>
                 Graphics Design
               </span>
             </motion.button>
@@ -162,10 +162,10 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
         {/* Tab Icons */}
         <div className="flex justify-center space-x-8 md:space-x-16 mt-4">
           <motion.div
-            className={`flex flex-col items-center ${activeTab === "fullstack" ? "text-blue-400" : "text-gray-500"}`}
+            className={`flex flex-col items-center ${activeTab === "fullstack" ? "text-blue-400" : "text-blue-500"}`}
             animate={{ y: activeTab === "fullstack" ? -5 : 0 }}
           >
-            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-blue-100 dark:bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
@@ -174,10 +174,10 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
           </motion.div>
 
           <motion.div
-            className={`flex flex-col items-center ${activeTab === "uiux" ? "text-blue-400" : "text-gray-500"}`}
+            className={`flex flex-col items-center ${activeTab === "uiux" ? "text-blue-400" : "text-blue-500"}`}
             animate={{ y: activeTab === "uiux" ? -5 : 0 }}
           >
-            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-blue-100 dark:bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
               </svg>
@@ -186,10 +186,10 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
           </motion.div>
 
           <motion.div
-            className={`flex flex-col items-center ${activeTab === "graphics" ? "text-red-400" : "text-gray-500"}`}
+            className={`flex flex-col items-center ${activeTab === "graphics" ? "text-blue-400" : "text-blue-500"}`}
             animate={{ y: activeTab === "graphics" ? -5 : 0 }}
           >
-            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
+            <div className="w-8 h-8 md:w-12 md:h-12 flex items-center justify-center bg-blue-100 dark:bg-gray-800 rounded-full shadow-lg mb-1 md:mb-2">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -207,8 +207,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
               key={category.label}
               onClick={() => handleTechChange(category.value)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${selectedTech === category.value
-                ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
-                : "bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-slate-200 border border-slate-700/50"
+                ? "bg-blue-600 dark:bg-blue-500 text-white shadow-lg shadow-blue-500/25"
+                : "bg-white dark:bg-slate-800/50 text-blue-800 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-900 dark:hover:text-slate-200 border border-blue-100 dark:border-slate-700/50"
                 }`}
             >
               {category.label}
@@ -232,14 +232,14 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             ))}
           </motion.div>
         ) : (
-          <div className="flex flex-col items-center justify-center py-20 text-slate-500">
+          <div className="flex flex-col items-center justify-center py-20 text-blue-600 dark:text-slate-500">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <p className="text-lg">No projects found with {filterCategories.find(c => c.value === selectedTech)?.label || selectedTech}</p>
             <button
               onClick={() => handleTechChange("All")}
-              className="mt-4 px-6 py-2 bg-slate-800 rounded-full text-sm hover:bg-slate-700 transition"
+              className="mt-4 px-6 py-2 bg-blue-600 dark:bg-slate-800 rounded-full text-sm hover:bg-blue-700 dark:hover:bg-slate-700 transition text-white"
             >
               Clear Filter
             </button>
@@ -254,8 +254,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
             disabled={currentPage === 1}
             className={`flex items-center justify-center w-10 h-10 rounded-full transition-all ${currentPage === 1
-              ? "bg-slate-900/50 text-slate-600 cursor-not-allowed"
-              : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              ? "bg-blue-100 dark:bg-slate-900/50 text-blue-400 dark:text-slate-600 cursor-not-allowed"
+              : "bg-white dark:bg-slate-800 text-blue-800 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700 hover:text-blue-900 dark:hover:text-white border border-blue-100 dark:border-transparent"
               }`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -269,8 +269,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
                 key={page}
                 onClick={() => setCurrentPage(page)}
                 className={`w-8 h-8 rounded-full text-sm font-medium transition-all ${currentPage === page
-                  ? "bg-blue-500 text-white shadow-lg shadow-blue-500/25 scale-110"
-                  : "bg-slate-800/50 text-slate-400 hover:bg-slate-800 hover:text-slate-200"
+                  ? "bg-blue-600 dark:bg-blue-500 text-white shadow-lg shadow-blue-500/25 scale-110"
+                  : "bg-white dark:bg-slate-800/50 text-blue-800 dark:text-slate-400 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-900 dark:hover:text-slate-200 border border-blue-100 dark:border-slate-700/50"
                   }`}
               >
                 {page}
@@ -282,8 +282,8 @@ export default function Tabs({ fullStackProjects, uiuxProjects, graphicsProjects
             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
             className={`flex items-center justify-center w-10 h-10 rounded-full transition-all ${currentPage === totalPages
-              ? "bg-slate-900/50 text-slate-600 cursor-not-allowed"
-              : "bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white"
+              ? "bg-blue-100 dark:bg-slate-900/50 text-blue-400 dark:text-slate-600 cursor-not-allowed"
+              : "bg-white dark:bg-slate-800 text-blue-800 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700 hover:text-blue-900 dark:hover:text-white border border-blue-100 dark:border-transparent"
               }`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

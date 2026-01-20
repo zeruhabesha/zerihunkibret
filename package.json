@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@opensearch-project/opensearch": "^2.5.0",
     "@shopify/hydrogen-react": "^2024.1.0",
     "@vercel/analytics": "^1.5.0",

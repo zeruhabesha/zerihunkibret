@@ -4,6 +4,12 @@ import type { ReactNode } from "react"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Providers } from "../components/providers"
+import dynamic from "next/dynamic"
+import { ThemeProvider } from "../components/ThemeProvider"
+
+const InteractiveBackground = dynamic(() => import("../components/InteractiveBackground"), {
+  ssr: false,
+})
 
 const DEFAULT_DESCRIPTION =
   "Full-Stack Developer with expertise in the MERN stack, PHP, MySQL, and crafted UI/UX experiences."
@@ -60,10 +66,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white dark:bg-slate-950 text-blue-900 dark:text-slate-100 transition-colors duration-300`}>
+        <div className="pointer-events-none fixed inset-0 -z-50">
+          {/* Light Mode Grid Pattern */}
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] dark:hidden opacity-40"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] dark:hidden"></div>
+          {/* Gradients */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,113,227,0.08),_transparent_60%)] dark:bg-[radial-gradient(circle_at_top,_rgba(37,99,235,0.18),_transparent_60%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,_rgba(0,113,227,0.08),_transparent_58%)] dark:bg-[radial-gradient(circle_at_bottom,_rgba(8,145,178,0.15),_transparent_58%)]" />
+        </div>
         <Providers>
-          {children}
-          <Analytics />
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <InteractiveBackground />
+            {children}
+            <Analytics />
+          </ThemeProvider>
         </Providers>
       </body>
     </html>
