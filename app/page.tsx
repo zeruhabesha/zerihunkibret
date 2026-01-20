@@ -489,7 +489,7 @@ export default function Home() {
     },
     {
       label: "Projects shipped",
-      value: "30+",
+      value: "50+",
       description: "Production builds, design systems, and concept validations across industries.",
     },
   ]
