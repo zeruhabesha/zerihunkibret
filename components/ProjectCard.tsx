@@ -10,6 +10,7 @@ interface Project {
     technologies: string[]
     image: string
     link?: string
+    password?: string
 }
 
 interface ProjectCardProps {
@@ -62,16 +63,26 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                     ))}
                 </div>
             </div>
-            <div className="flex items-center justify-between border-t border-slate-100 dark:border-slate-800/60 p-3 sm:p-4">
+            <div className="flex flex-col gap-3 border-t border-slate-100 dark:border-slate-800/60 p-3 sm:p-4">
+                {project.password && (
+                    <div className="flex items-center gap-2 text-sm text-blue-800 dark:text-slate-400">
+                        <span className="font-semibold text-blue-900 dark:text-slate-200">Password:</span>
+                        <code className="rounded bg-blue-50 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-blue-600 dark:text-blue-400">
+                            {project.password}
+                        </code>
+                    </div>
+                )}
                 {project.link && (
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sm text-blue-600 dark:text-blue-400 transition-colors hover:text-blue-700 dark:hover:text-blue-300 sm:text-base"
-                    >
-                        Visit Project →
-                    </a>
+                    <div className="flex items-center justify-between w-full">
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-blue-600 dark:text-blue-400 transition-colors hover:text-blue-700 dark:hover:text-blue-300 sm:text-base"
+                        >
+                            Visit Project →
+                        </a>
+                    </div>
                 )}
             </div>
         </motion.div>

@@ -111,8 +111,9 @@ export default function Home() {
       title: "GymLyfco",
       description: "Shopify storefront with customized theme, apps, and product experience for an activewear brand.",
       technologies: ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
-      image: "/images/gymlyfco.svg",
+      image: "/images/gymlyfco.png",
       link: "https://gymlyfco.myshopify.com/",
+      password: "gym",
     },
     {
       id: 8,
@@ -188,6 +189,7 @@ export default function Home() {
       technologies: ["Shopify", "Liquid", "E-commerce"],
       image: "/images/olanilux.png",
       link: "https://olanilux.myshopify.com/",
+      password: "o",
     },
     {
       id: 1003,
@@ -196,6 +198,16 @@ export default function Home() {
       technologies: ["Shopify", "Liquid", "E-commerce"],
       image: "/images/gotoplife.png",
       link: "https://gotoplife.myshopify.com/",
+      password: "go",
+    },
+    {
+      id: 1005,
+      title: "Racadori",
+      description: "E-commerce platform built on Shopify.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/racadori.png",
+      link: "https://racadori.myshopify.com/",
+      password: "skeung",
     },
     {
       id: 1004,
@@ -468,11 +480,9 @@ export default function Home() {
   // About me content
   const aboutContent = {
     paragraphs: [
-      "I am a versatile Full-Stack Developer with 4 years of specialized experience in the MERN stack (MongoDB, Express.js, React, Node.js), complemented by proficiency in PHP and MySQL. My journey in web development began with a passion for creating intuitive, functional applications that solve real-world problems.",
-      "At Beta Tech Hub, I led the development of several significant projects that showcased my technical versatility. I architected and implemented a comprehensive Property Management System that streamlined tenant management, maintenance requests, and financial tracking. The Tender Management System I developed revolutionized the procurement process by automating bid submissions, evaluations, and award notifications, significantly reducing processing time and improving transparency.",
-      "One of my most impactful projects was a full-stack medical practice application that integrated appointment scheduling, patient records management, and billing systems. This solution improved operational efficiency by 40% and enhanced the patient experience through an intuitive interface and automated reminders.",
-      "My technical expertise extends beyond development frameworks to include UI component libraries like MaterialUI and CoreUI. I leverage these tools to create consistent, responsive interfaces that adhere to modern design principles while maintaining excellent performance. I'm particularly skilled at implementing complex data visualization components and interactive elements that enhance user engagement.",
-      "What sets me apart is my dual expertise in both development and design. With over 5 years of experience in graphic design and UI/UX, using tools like Figma, Adobe Photoshop, and Illustrator, I bring a unique perspective to projects. This combination allows me to bridge the gap between technical functionality and aesthetic appeal, resulting in applications that are not only powerful and efficient but also visually compelling and intuitive to use.",
+      "I am a Full-Stack Developer with 4 years of experience building scalable, high-performance web applications. My expertise lies in architecting complex systems like property management and tender automation platforms, focusing on clean structure and efficient workflows to deliver robust solutions.",
+      "My creative background spans over 5 years in Graphic Design and 4 years in UI/UX Design. This dual expertise allows me to bridge the technical and visual aspects of development, ensuring every product I build is not only functional but also aesthetically polished and intuitive.",
+      "In the e-commerce sector, I possess over 1 year of detailed experience with Shopify. I specialize in developing custom themes, optimizing store performance, and creating tailored shopping experiences that align with brand identity. My approach combines technical precision with strategic design to drive conversions and enhance customer engagement.",
     ],
   }
 
