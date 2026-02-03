@@ -182,6 +182,17 @@ export default function Home() {
       link: "https://addis-music-lemon.vercel.app/",
     },
 
+
+    {
+      id: 1006,
+      title: "Lali's Bikinis",
+      description: "Shopify storefront for swimwear brand.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/lali.png",
+      link: "https://lalisbikinis.myshopify.com/",
+      password: "l",
+    },
+
     {
       id: 1002,
       title: "Olanilux",
@@ -207,7 +218,7 @@ export default function Home() {
       technologies: ["Shopify", "Liquid", "E-commerce"],
       image: "/images/racadori.png",
       link: "https://racadori.myshopify.com/",
-      password: "skeung",
+      password: "r",
     },
     {
       id: 1004,
