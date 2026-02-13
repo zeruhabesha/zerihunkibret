@@ -43,6 +43,7 @@ import {
   SiShopify,
   SiDocker,
   SiGit,
+  SiGrafana,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
 import ScrollProgress from "../components/ScrollProgress"
@@ -475,6 +476,7 @@ export default function Home() {
       { name: "CapCut", Icon: () => <span className="text-blue-900 font-bold text-xl">CapCut</span> },
       { name: "Docker", Icon: SiDocker, className: "text-blue-500" },
       { name: "Git", Icon: SiGit, className: "text-red-500" },
+      { name: "Grafana", Icon: SiGrafana, className: "text-orange-500" },
     ]
 
   const fadeIn = {
