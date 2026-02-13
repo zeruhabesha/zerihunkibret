@@ -41,6 +41,8 @@ import {
   SiTypescript,
   SiOpensearch,
   SiShopify,
+  SiDocker,
+  SiGit,
 } from "react-icons/si"
 import Typewriter from "./typewriter-effect"
 import ScrollProgress from "../components/ScrollProgress"
@@ -471,6 +473,8 @@ export default function Home() {
       { name: "Illustrator", Icon: SiAdobeillustrator, className: "text-blue-600" },
       { name: "Canva", Icon: SiCanva, className: "text-blue-500" },
       { name: "CapCut", Icon: () => <span className="text-blue-900 font-bold text-xl">CapCut</span> },
+      { name: "Docker", Icon: SiDocker, className: "text-blue-500" },
+      { name: "Git", Icon: SiGit, className: "text-red-500" },
     ]
 
   const fadeIn = {
