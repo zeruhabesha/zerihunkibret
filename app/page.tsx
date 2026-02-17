@@ -20,6 +20,18 @@ import {
   FaCode,
   FaPaintBrush,
   FaPuzzlePiece,
+  FaHome,
+  FaUsers,
+  FaChartBar,
+  FaListAlt,
+  FaPlus,
+  FaFileUpload,
+  FaCloud,
+  FaTruck,
+  FaBell,
+  FaShoppingCart,
+  FaSearch,
+  FaChevronDown,
 } from "react-icons/fa"
 import {
   SiMui,
@@ -141,6 +153,23 @@ export default function Home() {
       technologies: ["WordPress", "MySQL", "PHP"],
       image: "/images/betatechhub.png",
       link: "https://betatechhub.com",
+    },
+    {
+      id: 46,
+      title: "Onrock Digital",
+      description: "Digital agency website built with WordPress, featuring modern design and comprehensive service offerings.",
+      technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
+      image: "/images/betatechhub.png",
+      link: "https://onrock.digital",
+    },
+    {
+      id: 47,
+      title: "Nomad Clique",
+      description: "E-commerce platform for travel and lifestyle products with custom Shopify theme.",
+      technologies: ["Shopify", "Liquid", "JavaScript", "E-commerce"],
+      image: "/images/gymlyfco.png",
+      link: "https://nomadclique.myshopify.com/",
+      password: "n",
     },
     {
       id: 2,
@@ -348,6 +377,15 @@ export default function Home() {
       image: "/images/AutoSpare.png",
       link:
         "https://www.figma.com/proto/Gk7ndUdZAmZXZGnL8ypPhy/Untitled?node-id=0-1&t=NRWh4AXHZC2vu3Kh-1",
+    },
+    {
+      id: 26,
+      title: "Car Parts Shop",
+      description: "Modern car parts shop interface with price list management, inventory tracking, and supplier integration features.",
+      technologies: ["Figma", "UI/UX", "Design Systems"],
+      image: "/images/AutoSpare.png",
+      link:
+        "https://www.figma.com/design/Db9AfqoeECFVRyTctHC4wi/Car-Parts-Shop--Community-?node-id=0-1&p=f&t=18TlAOij2RnJhBAz-0",
     },
     {
       id: 35,
