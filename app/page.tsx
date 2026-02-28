@@ -196,23 +196,7 @@ export default function Home() {
       image: "/images/cafe.png",
       link: "https://bunnaflow.vercel.app",
     },
-    {
-      id: 36,
-      title: "Simple Music Web App",
-      description:
-        "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
-      technologies: [
-        "Typescript",
-        "React",
-        "Tailwind CSS",
-        "Node Js",
-        "Express Js",
-        "MongoDB",
-        "Docker",
-      ],
-      image: "/images/music.png",
-      link: "https://addis-music-lemon.vercel.app/",
-    },
+
 
 
     {
@@ -223,6 +207,15 @@ export default function Home() {
       image: "/images/lali.png",
       link: "https://lalisbikinis.myshopify.com/",
       password: "l",
+    },
+    {
+      id: 1007,
+      title: "One Rock",
+      description: "Shopify storefront for One Rock Digital.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/onerock.png",
+      link: "https://onerockdigital.myshopify.com/",
+      password: "o",
     },
 
     {
@@ -283,6 +276,23 @@ export default function Home() {
       technologies: ["Next.js", "React", "Vercel"],
       image: "/images/ethioturism.png",
       link: "https://ethioturism.vercel.app",
+    },
+    {
+      id: 36,
+      title: "Simple Music Web App",
+      description:
+        "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
+      technologies: [
+        "Typescript",
+        "React",
+        "Tailwind CSS",
+        "Node Js",
+        "Express Js",
+        "MongoDB",
+        "Docker",
+      ],
+      image: "/images/music.png",
+      link: "https://addis-music-lemon.vercel.app/",
     },
   ]
 
