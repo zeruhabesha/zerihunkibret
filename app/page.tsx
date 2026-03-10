@@ -118,18 +118,19 @@ export default function Home() {
       title: "Ethio Core Property",
       description: "Premium real estate in Ethiopia. Caring for what you own with integrity and excellence.",
       technologies: ["Next.js", "React", "Tailwind CSS", "Responsive Design"],
-      image: "/images/ethioproperties.png",
+      image: "/images/ethiocore.png",
       link: "https://ethioproperties.vercel.app/",
     },
     {
-      id: 87,
-      title: "GymLyfco",
-      description: "Shopify storefront with customized theme, apps, and product experience for an activewear brand.",
-      technologies: ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
-      image: "/images/gymlyfco.png",
-      link: "https://gymlyfco.myshopify.com/",
-      password: "gym",
+      id: 47,
+      title: "Nomad Clique",
+      description: "E-commerce platform for travel and lifestyle products with custom Shopify theme.",
+      technologies: ["Shopify", "Liquid", "JavaScript", "E-commerce"],
+      image: "/images/nomad.png",
+      link: "https://nomadclique.myshopify.com/",
+      password: "n",
     },
+
     {
       id: 8,
       title: "Ethio Tech Addis",
@@ -139,13 +140,15 @@ export default function Home() {
       link: "https://ethio-tech-addis.vercel.app",
     },
     {
-      id: 43,
-      title: "teamIfy",
-      description: "Streamline team collaboration ",
-      technologies: ["React", "Node.js", "Express.Js", "NextJS", "MongoDB", "Responsive Design"],
-      image: "/images/teamify.png",
-      link: "https://teamify-gamma.vercel.app",
+      id: 1007,
+      title: "One Rock",
+      description: "Shopify storefront for One Rock Digital.",
+      technologies: ["Shopify", "Liquid", "E-commerce"],
+      image: "/images/onerock.png",
+      link: "https://onerockdigital.myshopify.com/",
+      password: "o",
     },
+
     {
       id: 1,
       title: "Beta Tech Hub",
@@ -154,23 +157,8 @@ export default function Home() {
       image: "/images/betatechhub.png",
       link: "https://betatechhub.com",
     },
-    {
-      id: 46,
-      title: "Onrock Digital",
-      description: "Digital agency website built with WordPress, featuring modern design and comprehensive service offerings.",
-      technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
-      image: "/images/betatechhub.png",
-      link: "https://onrock.digital",
-    },
-    {
-      id: 47,
-      title: "Nomad Clique",
-      description: "E-commerce platform for travel and lifestyle products with custom Shopify theme.",
-      technologies: ["Shopify", "Liquid", "JavaScript", "E-commerce"],
-      image: "/images/gymlyfco.png",
-      link: "https://nomadclique.myshopify.com/",
-      password: "n",
-    },
+
+
     {
       id: 2,
       title: "Property Management System",
@@ -197,7 +185,14 @@ export default function Home() {
       link: "https://bunnaflow.vercel.app",
     },
 
-
+    {
+      id: 43,
+      title: "teamIfy",
+      description: "Streamline team collaboration ",
+      technologies: ["React", "Node.js", "Express.Js", "NextJS", "MongoDB", "Responsive Design"],
+      image: "/images/teamify.png",
+      link: "https://teamify-gamma.vercel.app",
+    },
 
     {
       id: 1006,
@@ -208,15 +203,7 @@ export default function Home() {
       link: "https://lalisbikinis.myshopify.com/",
       password: "l",
     },
-    {
-      id: 1007,
-      title: "One Rock",
-      description: "Shopify storefront for One Rock Digital.",
-      technologies: ["Shopify", "Liquid", "E-commerce"],
-      image: "/images/onerock.png",
-      link: "https://onerockdigital.myshopify.com/",
-      password: "o",
-    },
+
 
     {
       id: 1002,
@@ -246,12 +233,29 @@ export default function Home() {
       password: "r",
     },
     {
+      id: 87,
+      title: "GymLyfco",
+      description: "Shopify storefront with customized theme, apps, and product experience for an activewear brand.",
+      technologies: ["Shopify", "Liquid", "JavaScript", "Responsive Design"],
+      image: "/images/gymlyfco.png",
+      link: "https://gymlyfco.myshopify.com/",
+      password: "gym",
+    },
+    {
       id: 1004,
       title: "Melat Dereje Portfolio",
       description: "Portfolio website for an Architect & UI Designer crafting beautiful physical and digital spaces.",
       technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
       image: "/images/melat.png",
       link: "https://melatdereje.vercel.app/",
+    },
+    {
+      id: 46,
+      title: "Onrock Digital",
+      description: "Digital agency website built with WordPress, featuring modern design and comprehensive service offerings.",
+      technologies: ["WordPress", "PHP", "HTML", "CSS", "JavaScript", "MySQL"],
+      image: "/images/onerockdigital.png",
+      link: "https://onrock.digital",
     },
     {
       id: 9,
