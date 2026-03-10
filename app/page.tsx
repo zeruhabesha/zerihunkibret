@@ -273,31 +273,7 @@ export default function Home() {
       image: "/images/betaplc.png",
       link: "https://betaplc.com",
     },
-    {
-      id: 3,
-      title: "Ethiopian Tourism Platform",
-      description: "A platform showcasing Ethiopian tourism destinations and services.",
-      technologies: ["Next.js", "React", "Vercel"],
-      image: "/images/ethioturism.png",
-      link: "https://ethioturism.vercel.app",
-    },
-    {
-      id: 36,
-      title: "Simple Music Web App",
-      description:
-        "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
-      technologies: [
-        "Typescript",
-        "React",
-        "Tailwind CSS",
-        "Node Js",
-        "Express Js",
-        "MongoDB",
-        "Docker",
-      ],
-      image: "/images/music.png",
-      link: "https://addis-music-lemon.vercel.app/",
-    },
+
   ]
 
   const moreProjects = [
@@ -351,6 +327,31 @@ export default function Home() {
       technologies: ["React", "Node JS"],
       image: "/images/lidiya.png",
       link: "https://drive.google.com/file/d/1uNVkW6QB14hcC5tuxcqRw-YZydxWR0oU/view",
+    },
+    {
+      id: 3,
+      title: "Ethiopian Tourism Platform",
+      description: "A platform showcasing Ethiopian tourism destinations and services.",
+      technologies: ["Next.js", "React", "Vercel"],
+      image: "/images/ethioturism.png",
+      link: "https://ethioturism.vercel.app",
+    },
+    {
+      id: 36,
+      title: "Simple Music Web App",
+      description:
+        "A simple music cataloging web application where users can add and organize songs by title, artist, album, and genre. Built with Next.js and deployed on Vercel.",
+      technologies: [
+        "Typescript",
+        "React",
+        "Tailwind CSS",
+        "Node Js",
+        "Express Js",
+        "MongoDB",
+        "Docker",
+      ],
+      image: "/images/music.png",
+      link: "https://addis-music-lemon.vercel.app/",
     },
     {
       id: 1201,
